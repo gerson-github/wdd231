@@ -1,0 +1,200 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    margin-left: 18rem;
+    margin-right: 18rem;
+}
+
+header,
+footer {
+    background-color: #174d6f;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    font-family: "Montserrat Alternates", sans-serif;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    /* Alinha verticalmente os itens */
+    justify-content: center;
+    gap: 60px;
+    /* Espaçamento opcional entre os elementos */
+}
+
+header img {
+    border-color: black;
+    box-shadow: 0 7px 16px 8px rgba(0, 0, 0, 0.5);
+}
+
+nav {
+    background-color: #333;
+    /* Background color for the navigation bar */
+    color: whitesmoke;
+    padding: 0;
+}
+
+nav ul {
+    display: grid;
+    font-family: "Montserrat Alternates", sans-serif;
+    font-size: 22px;
+    height: 60px;
+    justify-items: center;
+    grid-template-columns: repeat(4, 1fr);
+    list-style: none;
+    /* Remove bullet points */
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: flex;
+    /* Align content inside the li */
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul li a {
+    text-decoration: none;
+    /* Remove underline */
+    color: whitesmoke;
+    /* Default link color */
+    position: relative;
+    /* Required for ::after positioning */
+    padding: 10px 15px;
+    /* Add spacing for clickable area */
+    transition: color 0.3s ease;
+    /* Smooth text color change */
+}
+
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    /* Start underline hidden */
+    height: 2px;
+    background-color: whitesmoke;
+    /* Underline color */
+    transition: width 0.3s ease;
+    /* Smooth animation for underline */
+    margin: 9px;
+    align-items: center;
+}
+
+nav ul li a:hover {
+    color: whitesmoke;
+    /* Change text color on hover */
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+    /* Expand underline on hover */
+}
+
+/* Set up the grid for the main container */
+main {
+    display: grid;
+    grid-template-columns: 3fr 1.40fr;
+    /* Two equal columns */
+    grid-template-rows: auto auto;
+    /* Two rows */
+    gap: 1rem;
+    /* Space between grid items */
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border: 5px solid red;
+}
+
+.span-two-columns {
+    grid-column: span 2; /* Span across 2 columns */
+}
+
+
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers items horizontally */
+    justify-content: center; /* Centers items vertically */
+    padding: 1rem;
+    background-color: #f8f9fa;
+    
+    border-radius: 8px;
+
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px 4px rgba(0, 0, 0, 0.2);
+   
+    
+}
+
+.card picture img {
+    max-width: 100%; /* Ensures the image does not exceed the card's width */
+    max-height: 100%;
+    display: relative;
+}
+
+.card  p {
+    margin: 0; 
+ 
+    
+}
+
+.card h2 {
+    width: 100%;
+    background-color: #174d6f;
+    /* Blue background */
+    color: whitesmoke;
+    /* White text */
+    margin: -1rem -1rem 1rem -1rem;
+    /* Remove padding effect for full width */
+    padding: 1rem;
+    /* Add space inside */
+    border-top-left-radius: 10px;
+    /* Rounded corners to match main */
+    border-top-right-radius: 10px;
+    text-align: center;
+
+}
+
+
+/* Media query for screens 40% of the screen width */
+@media (max-width: 1358px) {
+    main {
+        grid-template-columns: 1fr;
+        /* Stack all columns into one */
+        grid-template-rows: auto;
+        /* Adjust the rows accordingly */
+        border: 5px solid blue;
+    }
+
+    .span-two-columns {
+        grid-column: span 1; /* remove Span across 2 columns */
+    }
+
+}
+
+
+
+
+footer {
+    font-size: 22px;
+}
+
+footer p {
+    padding: 0;
+}
+
+.icone {
+    width: 28px;
+    height: 18px;
+    display: inline-block;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+
+}
