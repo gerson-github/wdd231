@@ -9,7 +9,9 @@
     <title>WDD231.002 - Web Frontend Development I - Gerson M Oliveira</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="styles/base.css">
-    <script src="scripts/getdates.js" defer></script>
+    <link rel="stylesheet" href="styles/base-responsive.css">
+
+    <script src="scripts/javaScript.js" defer></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,10 +30,18 @@
     </header>
     <nav>
         <ul>
-            <li><a class="current" href="#">Home</a></li>
-            <li><a href="#">Chamber</a></li>
-            <li><a href="#">GitHub Profile</a></li>
-            <li><a href="https://www.linkedin.com/in/gerson-oliveira-7872718/">LinkedIn</a></li>
+            <li>
+                <a class="current" href="index.html">Home</a>
+            </li>
+            <li>
+                <a href="#">Chamber</a>
+            </li>
+            <li>
+                <a href="#">GitHub Profile</a>
+            </li>
+            <li>
+                <a href="https://www.linkedin.com/in/gerson-oliveira-7872718/">LinkedIn</a>
+            </li>
         </ul>
     </nav>
     <main>
@@ -60,48 +70,35 @@
         <section class="span-two-columns">
             <div class="card">
                 <h3>Web and Computer Programming Certificate</h3>
-                <div>
-                    <button>All</button>
-                    <button>CSE</button>
-                    <button>WDD</button>
-                </div>
-                <div>
-                    <button>CSE 110</button>
-                    <button>WDD 130</button>
-                    <button>CSE 111</button>
-                    <button>CSE 210</button>
-                    <button>WDD 131</button>
-                    <button>WDD 231</button>
-                </div>
-            </div>
+                <div class="button-filter">
+                    <button id="btn-all" type="button">All</button>
+                    <button id="btn-cse" type="button">CSE</button>
+                    <button id="btn-wdd" type="button">WDD</button>
 
-            <!-- Main content for Section 2 goes here -->
+                </div>
+                <div id="total-credits" class="credits-display">Total Credits: 0</div>
+                <div class="grid-course" id="grid-course">
+
+                    <!-- <div class="completed">WDD 130</div>
+                    <div>CSE 111</div>
+                    <div>CSE 210</div>
+                    <div class="completed">WDD 131</div>
+                    <div>WDD 231</div> -->
+                </div>
+
+                <!-- Main content for Section 2 goes here -->
         </section>
     </main>
 
 
-    <!-- 
-    <div class="container">
-        <main>
-            <h2>Main Content</h2>
-            
-        </main>
 
-        <aside>
-            <h2>Related Information</h2>
-            
-        </aside>
-    </div>
-    <section>
-        <div>outro texto</div>
-    </section>                     -->
 
 
     <footer>
         <div>
-            &copy; <span id="currentYear"></span> <img class="icone" src="images/canada_flag.jfif"
-                alt="icone of canada"> Gerson Martins de Oliveira <img class="icone" src="images/canada_flag.jfif"
-                alt="icone of canada"> Canada
+            <!-- &copy; <span id="currentYear"></span>  <img class="icone" src="images/canada_flag.jfif" alt="icone of canada">  Gerson Martins de Oliveira <img class="icone" src="images/canada_flag.jfif" alt="icone of canada"> Canada -->
+            &copy; <span id="currentYear"></span> - Gerson Martins de Oliveira - Canada <img class="icone"
+                src="images/canada_flag.jfif" alt="icone of canada">
         </div>
         <div class="name" id="lastModified">Page last modified: </div>
     </footer>

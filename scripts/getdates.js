@@ -1,1 +1,0 @@
-const currYear=(new Date).getFullYear(),lastModified=document.lastModified;document.getElementById("lastModified").textContent+=lastModified,document.getElementById("currentYear").textContent=currYear;

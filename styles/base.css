@@ -77,7 +77,8 @@ nav ul li a::after {
     width: 0;
     /* Start underline hidden */
     height: 2px;
-    background-color: rgb(217, 221, 15);
+    background-color: rgb(226, 227, 169);
+    
     /* Underline color */
     transition: width 0.3s ease;
     /* Smooth animation for underline */
@@ -86,7 +87,8 @@ nav ul li a::after {
 }
 
 nav ul li a:hover {
-    color: whitesmoke;
+    color:rgb(226, 227, 169);
+    transition: width 0.3s ease;
     /* Change text color on hover */
 }
 
@@ -94,6 +96,7 @@ nav ul li a:hover::after {
     width: 100%;
     /* Expand underline on hover */
 }
+
 
 /* Set up the grid for the main container */
 main {
@@ -106,7 +109,7 @@ main {
     /* Space between grid items */
     padding: 1rem;
     background-color: #f8f9fa;
-    border: 5px solid red;
+    
 
 }
 
@@ -177,25 +180,64 @@ p {
     margin: 10px;
 }
 
+.button-filter{
+    display: flex;
+    justify-content: center;   
+    align-items: center;
+    gap: 10px;
+    border-bottom: 2px solid #ccc;
+} 
 
+.button-filter button {
+    height: 30px;
+    width: 120px;
+    border: none; /* Optional: remove border for cleaner look */
+    border-radius: 5px; /* Optional: adds rounded corners */
+    background-color: #00050a; /* Optional: button background color */
+    color: white; /* Optional: button text color */
+    font-size: 16px; /* Optional: button text size */
+    cursor: pointer;
+    margin: 5px;
+    
+  }
+  
+  .button-filter button:hover {
+    background-color: #3a3b3b; /* Optional: darker color on hover */
+  }
 
+  .grid-course {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+    grid-template-rows: repeat(2, auto);  /* 2 rows, automatic height */
+    gap: 10px; /* Space between grid items */
+    padding: 10px;
+  }
+  
+  .grid-course div {
+    padding: 10px;
+    background-color:  #e5edef ; /* #f0f0f0;  Light background color */
+    color: black;
+    border: 1px solid #ccc;    /* Optional: border for grid items */
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;        /* Optional: rounded corners */
+  }
 
-/* Media query for screens 40% of the screen width */
-@media (max-width: 1358px) {
-    main {
-        grid-template-columns: 1fr;
-        /* Stack all columns into one */
-        grid-template-rows: auto;
-        /* Adjust the rows accordingly */
-        border: 5px solid blue;
-    }
+  .grid-course .completed {
+    background-color:#65311b;  
+    color: whitesmoke;
+  }
 
-    .span-two-columns {
-        grid-column: span 1;
-        /* remove Span across 2 columns */
-    }
-
+  .credits-display {
+    text-align: center; /* Centers text horizontally */
+    margin-top: 20px; /* Adds space above for separation */
+    font-size: 1.5rem; /* Adjust font size for better visibility */
+    font-weight: bold; /* Makes the text bold for emphasis */
 }
+
+
+
 
 
 
@@ -217,3 +259,5 @@ footer p {
     border-radius: 50%;
 
 }
+
+

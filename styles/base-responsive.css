@@ -1,0 +1,22 @@
+/* Media query for screens 40% of the screen width */
+@media (max-width: 1358px) {
+    main {
+        grid-template-columns: 1fr;
+        /* Stack all columns into one */
+        grid-template-rows: auto;
+        /* Adjust the rows accordingly */
+        border: 5px solid blue;
+    }
+
+    .span-two-columns {
+        grid-column: span 1;
+        /* remove Span across 2 columns */
+    }
+
+    .grid-course {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+
+}
