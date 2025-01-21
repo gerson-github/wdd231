@@ -3,13 +3,14 @@
     body {
         margin: 2px;
     }
+
     main {
         grid-template-columns: 1fr;
         /* Stack all columns into one */
         grid-template-rows: auto;
         /* Adjust the rows accordingly */
-        border: 5px solid blue;
-        
+    
+
     }
 
     .span-two-columns {
@@ -23,7 +24,7 @@
     }
 
     nav ul {
-     
+
         grid-template-columns: 1fr;
         grid-template-rows: auto;
 
@@ -34,7 +35,16 @@
     }
 
 
-   
 
 
+
+}
+
+@media (min-width: 801px) {
+  
+
+
+    .navigation {
+        display: block !important;;
+    }
 }

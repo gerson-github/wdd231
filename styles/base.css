@@ -163,8 +163,24 @@ main {
     box-shadow: 0 2px 12px 4px rgba(0, 0, 0, 0.2);
 
     height: 100%;
-
+    text-align: center;
 }
+
+
+.card figure {
+    /*margin: 10px auto;  Centers the figure itself */
+    display: inline-block; /* Makes the figure behave like inline content */
+}
+
+.card img {
+    max-width: 100%; /* Ensures responsiveness */
+    height: auto; /* Maintains aspect ratio */
+}
+
+.card figcaption {
+    margin-top: 0.5rem; /* Adds space above figcaption */
+}
+
 
 .card h2,
 h3 {
@@ -194,6 +210,10 @@ h3 {
 
 
 }
+
+
+ses
+
 
 .card aside {
     margin: 10px;
