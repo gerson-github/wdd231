@@ -2,8 +2,8 @@ body {
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
     line-height: 1.5;
-    margin-left: 18rem;
-    margin-right: 18rem;
+    margin-left: 8rem;
+    margin-right: 8rem;
 }
 
 header,
@@ -25,22 +25,25 @@ header {
 }
 
 header img {
-    border-color: black;
+    border-color: #010101;
     box-shadow: 0 7px 16px 8px rgba(0, 0, 0, 0.5);
 }
 
 nav {
     background-color: #333;
-    /* Background color for the navigation bar */
     color: whitesmoke;
     padding: 0;
+    height: 100%;
+    display: block;
 }
+
 
 nav ul {
     display: grid;
+
     font-family: "Montserrat Alternates", sans-serif;
     font-size: 22px;
-    height: 60px;
+    /* height: 60px; */
     justify-items: center;
     grid-template-columns: repeat(4, 1fr);
     list-style: none;
@@ -78,7 +81,7 @@ nav ul li a::after {
     /* Start underline hidden */
     height: 2px;
     background-color: rgb(226, 227, 169);
-    
+
     /* Underline color */
     transition: width 0.3s ease;
     /* Smooth animation for underline */
@@ -87,7 +90,7 @@ nav ul li a::after {
 }
 
 nav ul li a:hover {
-    color:rgb(226, 227, 169);
+    color: rgb(226, 227, 169);
     transition: width 0.3s ease;
     /* Change text color on hover */
 }
@@ -96,6 +99,35 @@ nav ul li a:hover::after {
     width: 100%;
     /* Expand underline on hover */
 }
+
+
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    border: none;
+    background: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    /* Absolute positioning */
+    top: 10px;
+    /* Distance from the top */
+    right: 10px;
+    /* Distance from the right */
+}
+
+
+
+ .hamburger-line  {
+    width: 25px;
+    height: 3px;
+    background-color: whitesmoke;
+    margin: 4px 0;
+    transition: all 0.3s ease;
+} 
+
 
 
 /* Set up the grid for the main container */
@@ -109,7 +141,7 @@ main {
     /* Space between grid items */
     padding: 1rem;
     background-color: #f8f9fa;
-    
+
 
 }
 
@@ -134,33 +166,25 @@ main {
 
 }
 
-.card picture img {
-    max-width: 100%;
-    /* Ensures the image does not exceed the card's width */
-    max-height: 100%;
-    display: relative;
-}
-
-
 .card h2,
 h3 {
-    /* width: 100%; */
     margin: 0;
-
     background-color: #174d6f;
-    /* Blue background */
     color: whitesmoke;
-    /* White text */
-    /* margin: -1rem -1rem 1rem -1rem;  */
-    /* Remove padding effect for full width */
-    padding: 1rem;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
     /* Add space inside */
     border-top-left-radius: 10px;
     /* Rounded corners to match main */
     border-top-right-radius: 10px;
     text-align: center;
 
+
+
 }
+
+
 
 
 .card li {
@@ -171,69 +195,82 @@ h3 {
 
 }
 
-.card picture,
-p {
+.card aside {
+    margin: 10px;
     text-align: center;
 }
 
-.card picture {
-    margin: 10px;
-}
 
-.button-filter{
+.button-filter {
     display: flex;
-    justify-content: center;   
+    justify-content: center;
     align-items: center;
     gap: 10px;
     border-bottom: 2px solid #ccc;
-} 
+}
 
 .button-filter button {
     height: 30px;
     width: 120px;
-    border: none; /* Optional: remove border for cleaner look */
-    border-radius: 5px; /* Optional: adds rounded corners */
-    background-color: #00050a; /* Optional: button background color */
-    color: white; /* Optional: button text color */
-    font-size: 16px; /* Optional: button text size */
+    border: none;
+    /* Optional: remove border for cleaner look */
+    border-radius: 5px;
+    /* Optional: adds rounded corners */
+    background-color: #333333;
+    /* Optional: button background color */
+    color: white;
+    /* Optional: button text color */
+    font-size: 16px;
+    /* Optional: button text size */
     cursor: pointer;
     margin: 5px;
-    
-  }
-  
-  .button-filter button:hover {
-    background-color: #3a3b3b; /* Optional: darker color on hover */
-  }
 
-  .grid-course {
+}
+
+.button-filter button:hover {
+    background-color: #6f7070;
+    /* Optional: darker color on hover */
+}
+
+.grid-course {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
-    grid-template-rows: repeat(2, auto);  /* 2 rows, automatic height */
-    gap: 10px; /* Space between grid items */
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 equal columns */
+    grid-template-rows: repeat(2, auto);
+    /* 2 rows, automatic height */
+    gap: 10px;
+    /* Space between grid items */
     padding: 10px;
-  }
-  
-  .grid-course div {
+}
+
+.grid-course div {
     padding: 10px;
-    background-color:  #e5edef ; /* #f0f0f0;  Light background color */
+    background-color: #e5edef;
+    /* #f0f0f0;  Light background color */
     color: black;
-    border: 1px solid #ccc;    /* Optional: border for grid items */
+    border: 1px solid #ccc;
+    /* Optional: border for grid items */
     text-align: center;
     font-size: 16px;
     font-weight: bold;
-    border-radius: 5px;        /* Optional: rounded corners */
-  }
+    border-radius: 5px;
+    /* Optional: rounded corners */
+}
 
-  .grid-course .completed {
-    background-color:#65311b;  
+.grid-course .completed {
+    background-color: #65311b;
     color: whitesmoke;
-  }
+}
 
-  .credits-display {
-    text-align: center; /* Centers text horizontally */
-    margin-top: 20px; /* Adds space above for separation */
-    font-size: 1.5rem; /* Adjust font size for better visibility */
-    font-weight: bold; /* Makes the text bold for emphasis */
+.credits-display {
+    text-align: center;
+    /* Centers text horizontally */
+    margin-top: 20px;
+    /* Adds space above for separation */
+    font-size: 1.5rem;
+    /* Adjust font size for better visibility */
+    font-weight: bold;
+    /* Makes the text bold for emphasis */
 }
 
 
@@ -259,5 +296,3 @@ footer p {
     border-radius: 50%;
 
 }
-
-

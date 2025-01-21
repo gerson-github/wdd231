@@ -5,6 +5,21 @@ document.getElementById("lastModified").textContent += lastModified;
 document.getElementById("currentYear").textContent = currYear;
 
 
+const hamburger = document.querySelector('.hamburger');
+
+const navigation = document.querySelector('.navigation');
+
+hamburger.addEventListener('click', () => {
+        
+
+    if (navigation.style.display === 'block') {
+        navigation.style.display = 'none'; // Hide the navigation
+    } else {
+        navigation.style.display = 'block'; // Show the navigation
+    }
+});
+
+
 const courses = [
     {
         subject: 'CSE',
@@ -93,11 +108,11 @@ const btnWdd = document.getElementById('btn-wdd');
 // Add event listeners for each button
 btnAll.addEventListener('click', () => {
     showCourseList(courses);
-    
+
 });
 btnCse.addEventListener('click', () => {
-     const cseCourse = courses.filter(course => course.subject === 'CSE');
-     showCourseList(cseCourse);
+    const cseCourse = courses.filter(course => course.subject === 'CSE');
+    showCourseList(cseCourse);
 });
 
 btnWdd.addEventListener('click', async () => {
@@ -108,26 +123,25 @@ btnWdd.addEventListener('click', async () => {
 showCourseList(courses, 'all');
 
 
-async function showCourseList(courses)
-{
+async function showCourseList(courses) {
     const gridCourse = document.getElementById('grid-course');
-    let  totalCredits = 0;
+    let totalCredits = 0;
 
     gridCourse.innerHTML = '';
 
-    totalCredits = courses.reduce((sum,course) => course.completed ? sum + course.credits: sum, 0);    
- 
+    totalCredits = courses.reduce((sum, course) => course.completed ? sum + course.credits : sum, 0);
+
     const totalCreditsElement = document.getElementById('total-credits');
     totalCreditsElement.textContent = `Total Credits: ${totalCredits}`;
 
     courses.forEach(course => {
         const courseDiv = document.createElement('div');
         courseDiv.classList.add('course');
-        
+
         if (course.completed) {
             courseDiv.classList.add('completed');
         }
-        
+
         courseDiv.textContent = `${course.subject} ${course.number}`;
         gridCourse.appendChild(courseDiv);
 
@@ -143,4 +157,3 @@ async function showCourseList(courses)
 
 
 
-  

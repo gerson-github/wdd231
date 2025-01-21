@@ -1,11 +1,15 @@
 /* Media query for screens 40% of the screen width */
-@media (max-width: 1358px) {
+@media (max-width: 800px) {
+    body {
+        margin: 2px;
+    }
     main {
         grid-template-columns: 1fr;
         /* Stack all columns into one */
         grid-template-rows: auto;
         /* Adjust the rows accordingly */
         border: 5px solid blue;
+        
     }
 
     .span-two-columns {
@@ -17,6 +21,20 @@
         display: grid;
         grid-template-columns: 1fr;
     }
+
+    nav ul {
+     
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+
+   
 
 
 }
