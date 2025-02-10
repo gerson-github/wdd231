@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <title>WDD231.002 - Web Frontend Development I - Gerson M Oliveira</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="WDD231.002 - Web Frontend Development I">
@@ -9,58 +11,324 @@
     <meta property="og:type" content="website" />
     <meta property="og:image" content="https://gerson-github.github.io/wdd231/chamber/images/chamber.png" />
     <meta property="og:url" content="https://gerson-github.github.io/wdd231/chamber/directory.html" />
-    
 
-    <title>WDD231.002 - Web Frontend Development I - Gerson M Oliveira</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-    <link rel="stylesheet" href="styles/base.css">
-    <link rel="stylesheet" href="styles/base-responsive.css">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/chamber-base.css">
+    <link rel="stylesheet" href="styles/chamber-base-reponsive.css">
+
+    <!-- <link rel="stylesheet" href="styles/base-responsive.css"> -->
     <script src="scripts/javaScript.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,500;1,100&family=Roboto:wght@100;400&display=swap" rel="stylesheet">
-    <!-- <link rel="icon" href="data:,"> solution for favicon-->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,500;1,100&family=Roboto:wght@100;400&display=swap"
+        rel="stylesheet">
     <link rel="icon" href="favicon.ico">
 </head>
+
 <body>
     <header>
-        <h1>Gerson M. Oliveira</h1>
-        <button type="button" class="hamburger" aria-label="Toggle Navigation" aria-expanded="false">
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-        </button>
-    </header>
+        <!-- <div class="logo" >
+            <a href="#">
+                <img src="images/chamber_processed.png" alt="Victoria Chamber of Commerce Logo" />
+            </a>
+            <div class="text-logo" >
+                <h1>Victoria</h1>
+                <h4>Chamber of Commerce</h4>
+            </div>
+        </div> -->
+
+        <style>
+            /* General Styles */
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: #f4f4f4;
+            }
     
-    <nav class="navigation" aria-label="Primary Navigation">
-        <ul>
-            <li><a class="current" href="index.html">Home</a></li>
-            <li><a href="#" aria-label="Chamber">Chamber</a></li>
-            <li><a href="#" aria-label="GitHub Profile">GitHub Profile</a></li>
-            <li><a href="https://www.linkedin.com/in/gerson-oliveira-7872718/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            /* Navigation Bar */
+            .navbar {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                /* background-color: #06478b; */
+                padding: 10px 20px;
+            }
+    
+            .navbar .logo {
+                color: white;
+                font-size: 1.5rem;
+                font-weight: bold;
+                text-decoration: none;
+            }
+    
+            /* Navigation Links */
+            .nav-links {
+                display: flex;
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+    
+            .nav-links li {
+                margin: 0 10px;
+            }
+    
+            .nav-links a {
+                text-decoration: none;
+                color: white;
+                font-size: 1rem;
+                padding: 8px 12px;
+                transition: 0.3s;
+            }
+    
+            .nav-links a:hover {
+                background-color: white;
+                color: #06478b;
+                border-radius: 5px;
+            }
+    
+            /* Hamburger Menu */
+            .hamburger {
+                display: none;
+                font-size: 2rem;
+                color: white;
+                background: none;
+                border: none;
+                cursor: pointer;
+            }
+    
+            /* Responsive Styles */
+            @media (max-width: 768px) {
+                .nav-links {
+                    display: none;
+                    flex-direction: column;
+                    position: absolute;
+                    top: 60px;
+                    left: 0;
+                    width: 100%;
+                    background: rgba(0, 0, 0, 0.9);
+                    text-align: center;
+                    padding: 10px 0;
+                }
+    
+                .nav-links.show {
+                    display: flex;
+                }
+    
+                .nav-links li {
+                    margin: 10px 0;
+                }
+    
+                .hamburger {
+                    display: block;
+                }
+            }
+        </style>
+
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <!-- <a href="#" class="logo">MySite</a> -->
+        <div class="logo" >
+            <a href="#">
+                <img src="images/chamber_processed.png" alt="Victoria Chamber of Commerce Logo" />
+            </a>
+            <div class="text-logo" >
+                <h1>Victoria</h1>
+                <h4>Chamber of Commerce</h4>
+            </div>
+        </div> 
+        <ul class="nav-links">
+            <li><a class="current" href="#" aria-label="Home">Home</a></li>
+            <li><a href="#" aria-label="Discover">Discover</a></li>
+            <li><a href="#" aria-label="Directory">Directory</a></li>
+            <li><a href="#" aria-label="Events">Events</a></li>
+            <li><a href="#" aria-label="Podcast">Podcast</a></li>
+            <li><a href="#" aria-label="Join">Join</a></li>
+            <li><a href="#" aria-label="About">About</a></li>
+            <!-- <li><a href="#" aria-label="User Profile">
+                    <img src="images/user1_processed.png" alt="User Profile" width="30" height="30" />
+                </a>
+            </li> -->
         </ul>
+        <a href="#" aria-label="User Profile">
+            <img src="images/user1_processed.png" alt="User Profile" width="30" height="30" />
+        </a>
+        <button class="hamburger">☰</button>
     </nav>
-    
-    <main>
-        <section class="card">
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuButton = document.querySelector(".hamburger");
+            const navLinks = document.querySelector(".nav-links");
+
+            menuButton.addEventListener("click", function () {
+                navLinks.classList.toggle("show"); // Toggle menu
+            });
+        });
+    </script>
+
+        <!-- <nav>
+            <ul class="navigation">
+                <li><a class="current" href="#" aria-label="Home">Home</a></li>
+                <li><a href="#" aria-label="Discover">Discover</a></li>
+                <li><a href="#" aria-label="Directory">Directory</a></li>
+                <li><a href="#" aria-label="Events">Events</a></li>
+                <li><a href="#" aria-label="Podcast">Podcast</a></li>
+                <li><a href="#" aria-label="Join">Join</a></li>
+                <li><a href="#" aria-label="About">About</a></li>
+                <li><a href="#" aria-label="User Profile">
+                        <img src="images/user1_processed.png" alt="User Profile" width="30" height="30" />
+                    </a>
+                </li>
+            </ul>
             
+        </nav>
+        <a id="menu" href="#"></a> -->
+    </header>
+
+    <main >
+        <section class="span-tree-columns jumbotron">
+            <img src="images/bc_chamber.jpg"  />
+
+                <button class="button">Keynote Tickets</button>
+
         </section>
+
         
-        <section class="card">
-           
-        </section>
-        
-        <section class="span-two-columns card">
+            <h1 class="span-tree-columns ml" >Home</h1>
             
-        </section>
+            <section class="card ml mr">
+                <h2>Events</h2>
+                <ol>
+                    <li>event a</li>
+                    <li>event b</li>
+                    <li>event c</li>
+                </ol>
+
+            </section>
+
+            <section class="card ml mr">
+                <h2>Current Weather</h2>
+                <div class="current-weather" >
+                    <img src="images/weather.png" alt="">
+                    <div>
+                        <p>78&deg;F</p>
+                        <p>Partly Cloudy</p>
+                        <dl class="weather-info" >
+                            <dt>High:</dt> <dd>85°F</dd>
+                            <dt>Low:</dt> <dd>52°F</dd>
+                            <dt>Humidity:</dt> <dd>35%</dd>
+                            <dt>Sunrise:</dt> <dd>7:30am</dd>
+                            <dt>Sunset:</dt> <dd>9:59pm</dd>
+                        </dl>
+                    </div>
+                </div>
+            </section>
+
+            <section class="card ml mr">
+                <h2>Weather Forecast</h2>
+                <dl class="weather-info weather-forecast">
+                    <dt>Today:</dt> <dd>52&deg;F</dd>
+                    <dt>Wednesday:</dt> <dd>89&deg;F</dd>
+                    <dt>Thursaday:</dt> <dd>68&deg;F</dd>
+                </dl>
+            </section>
+
+            <section class="span-tree-columns ml mr">
+
+                <div class="business-directory">
+
+                    <div class="business-card ">
+                        <h3>Business Name</h3>
+                        <p style="border-bottom: 1px solid gray; font-size: 12px; margin: 0; padding: 0;">Business Tag Line</p>
+                        <div class="business-card-detail">
+                            <img src="images/img_cia.png" alt="">
+                            <div>
+                                <dl class="weather-info">
+                                    <dt>EMAIL:</dt><dd>teste@teste.ca</dd>
+                                    <dt>PHONE:</dt><dd>123 454-9090</dd>
+                                    <dt>URL:</dt><dd>www.teste.ca</dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="business-card ">
+                        <h3>Business Name</h3>
+                        <p style="border-bottom: 1px solid gray; font-size: 12px; margin: 0; padding: 0;">Business Tag Line</p>
+                        <div class="business-card-detail">
+                            <img src="images/img_cia.png" alt="">
+                            <div>
+                                <dl class="weather-info">
+                                    <dt>EMAIL:</dt><dd>teste@teste.ca</dd>
+                                    <dt>PHONE:</dt><dd>123 454-9090</dd>
+                                    <dt>URL:</dt><dd>www.teste.ca</dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="business-card ">
+                        <h3>Business Name</h3>
+                        <p style="border-bottom: 1px solid gray; font-size: 12px; margin: 0; padding: 0;">Business Tag Line</p>
+                        <div class="business-card-detail">
+                            <img src="images/img_cia.png" alt="">
+                            <div>
+                                <dl class="weather-info">
+                                    <dt>EMAIL:</dt><dd>teste@teste.ca</dd>
+                                    <dt>PHONE:</dt><dd>123 454-9090</dd>
+                                    <dt>URL:</dt><dd>www.teste.ca</dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="business-card ">
+                        <h3>Business Name</h3>
+                        <p style="border-bottom: 1px solid gray; font-size: 12px; margin: 0; padding: 0;">Business Tag Line</p>
+                        <div class="business-card-detail">
+                            <img src="images/img_cia.png" alt="">
+                            <div>
+                                <dl class="weather-info">
+                                    <dt>EMAIL:</dt><dd>teste@teste.ca</dd>
+                                    <dt>PHONE:</dt><dd>123 454-9090</dd>
+                                    <dt>URL:</dt><dd>www.teste.ca</dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+            </section>
+        
     </main>
-    
+
     <footer>
-        <div>&copy; <span id="currentYear"></span> - Gerson Martins de Oliveira - Canada 
-            <img class="icone" src="images/canada_flag.jfif" alt="icone of canada">
+        <address >
+            <strong>Victoria Chamber of Commerce</strong><br>
+            1234 Maplewood Crescent<br>
+            Victoria, BC V8P 1A1<br>
+            Canada<br>
+            <a href="mailto:info@chamberOfCommerce.ca">info@chamberOfCommerce.ca</a><br>
+            (223) 555-2300
+        </address>
+        <img src="images/social.png" alt="social" title="Instagram, Facebook, TikTok, X" />
+        <div class="project-info">
+            <p>WDD231 Class Project</p>
+            <p>Gerson M. Oliveira</p>
+            <p>&copy; <span id="currentYear"></span> - Victoria Chamber of Commerce</p>
+            <p id="lastModified">Last Modification: </p>
         </div>
-        <div class="name" id="lastModified">Page last modified:</div>
+        
     </footer>
 </body>
-</html>
 
+</html>

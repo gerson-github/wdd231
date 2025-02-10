@@ -1,0 +1,173 @@
+
+@media (max-width: 1409px) 
+{
+    main {
+        grid-template-columns: 1fr 1fr;
+         /* border: 5px solid red;  */
+        width: 100%;
+
+    }
+
+
+
+    .jumbotron {
+        height: auto; /* Allow the height to adjust naturally */
+    }
+
+    .jumbotron img {
+        object-fit: contain; /* Shrink the image instead of cropping */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    .jumbotron .button { 
+        
+    }
+
+
+    .business-directory {
+        grid-template-columns: 1fr 1fr ; 
+        
+    } 
+    
+
+
+}
+
+
+
+@media (max-width: 1114px) 
+{
+    main {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 1rem;
+            border: 5px solid yellowgreen;   
+    }
+
+    .ml {
+        margin-left: 8px;
+    }
+
+    .mr {
+        margin-right: 8px;
+    }
+
+
+    body {
+        padding: 0;
+    }
+    
+    header, footer {
+        margin-left: -5%;
+        margin-right: -5%;
+    }
+    
+    address, .project-info, .logo, nav  {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+
+    .business-directory {
+        grid-template-columns: 1fr 1fr; 
+        /* padding: 0 5px;  */
+        
+    } 
+
+    
+    /* nav {
+        display: none;
+    } */
+
+    .logo img {
+        max-width: 90px;
+    }
+
+
+    .logo h1, h4 {
+        font-size: 18px;
+        
+    }
+
+    #menu {
+        display: block;
+    }
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin: 10px auto;
+        padding: 0;
+        gap: 10px;
+        width: 70%;
+    }
+
+    .navigation {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: #3c0965;
+        width: 200px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, .1);
+        border-radius: 0 0 5px 5px;
+        padding: 1rem 0;
+    }
+
+    .navigation.show {
+        display: flex;
+    }
+
+    .navigation li {
+        margin: 0;
+    }
+
+    .navigation a {
+        padding: .5rem 1rem;
+        text-align: left;
+    }
+
+
+}
+
+@media (max-width: 900px) 
+{
+
+    .mr {
+        margin-right: 8px;
+    }
+
+    /* section {
+        width: 100%;
+    } */
+
+    .business-directory {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .business-card {
+        width: 100%;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .project-info {
+        text-align: left;
+        /* margin-left: 0; */
+    }
+
+ 
+
+    footer img {
+        align-self: center;
+        max-width: 230px;
+    }
+}
+
+
