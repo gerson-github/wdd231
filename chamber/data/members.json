@@ -5,63 +5,70 @@
             "address": "123 Main St, Springfield, USA",
             "phone": "(123) 456-7890",
             "website": "https://www.sunriseboutique.com",
-            "image": "sunrise_boutique.png",
+            "image": "img_cia.png",
             "membership_level": 1,
-            "category": "Retail"
+            "category": "Retail",
+            "email":"info@sunriseboutique.com"
         },
         {
             "name": "Elite Tech Solutions",
             "address": "456 Innovation Way, Springfield, USA",
             "phone": "(123) 987-6543",
             "website": "https://www.elitetech.com",
-            "image": "elite_tech.png",
+            "image": "img_cia.png",
             "membership_level": 3,
-            "category": "Technology"
+            "category": "Technology",
+            "email":"info@elitetech.com"
         },
         {
             "name": "Green Earth Landscaping",
             "address": "789 Garden Rd, Springfield, USA",
             "phone": "(123) 555-0123",
             "website": "https://www.greenearthlandscaping.com",
-            "image": "green_earth.png",
+            "image": "img_cia.png",
             "membership_level": 2,
-            "category": "Home Services"
+            "category": "Home Services",
+            "email":"info@greenearthlandscaping.com"
         },
         {
             "name": "Metro Diner",
             "address": "321 Food St, Springfield, USA",
             "phone": "(123) 222-3333",
             "website": "https://www.metrodiner.com",
-            "image": "metro_diner.png",
+            "image": "img_cia.png",
             "membership_level": 1,
-            "category": "Restaurant"
+            "category": "Restaurant",
+            "email":"info@metrodiner.com"
         },
         {
             "name": "Bright Future Education Center",
             "address": "555 Knowledge Ln, Springfield, USA",
             "phone": "(123) 777-8888",
             "website": "https://www.brightfutureedu.com",
-            "image": "bright_future.png",
+            "image": "img_cia.png",
             "membership_level": 2,
-            "category": "Education"
+            "category": "Education",
+            "email":"info@brightfutureedu.com"
         },
         {
             "name": "Peak Fitness Gym",
             "address": "789 Strength Ave, Springfield, USA",
             "phone": "(123) 999-0000",
             "website": "https://www.peakfitnessgym.com",
-            "image": "peak_fitness.png",
+            "image": "img_cia.png",
             "membership_level": 3,
-            "category": "Health & Wellness"
+            "category": "Health & Wellness",
+            "email":"info@peakfitnessgym.com"
         },
         {
             "name": "Velocity Marketing Agency",
             "address": "147 Branding Blvd, Springfield, USA",
             "phone": "(123) 333-4444",
             "website": "https://www.velocitymarketing.com",
-            "image": "velocity_marketing.png",
+            "image": "img_cia.png",
             "membership_level": 1,
-            "category": "Marketing & Advertising"
+            "category": "Marketing & Advertising",
+            "email":"info@velocitymarketing.com"
         }
     ]
 }

@@ -1,48 +1,36 @@
-
-@media (max-width: 1409px) 
-{
+@media (max-width: 1409px) {
     main {
         grid-template-columns: 1fr 1fr;
-         /* border: 5px solid red;  */
+        border: 5px solid red;
         width: 100%;
 
     }
 
 
 
-    .jumbotron {
-        height: auto; /* Allow the height to adjust naturally */
-    }
-
-    .jumbotron img {
-        object-fit: contain; /* Shrink the image instead of cropping */
-        height: auto; /* Maintain aspect ratio */
-    }
-
-    .jumbotron .button { 
-        
-    }
-
-
     .business-directory {
-        grid-template-columns: 1fr 1fr ; 
-        
-    } 
-    
+        grid-template-columns: 1fr 1fr;
+
+    }
+
+
+
+    /* .logo {
+        margin-left: 5%;
+    }  */
 
 
 }
 
 
 
-@media (max-width: 1114px) 
-{
+@media (max-width: 1114px) {
     main {
         display: flex;
         flex-direction: column;
         width: 100%;
         gap: 1rem;
-            border: 5px solid yellowgreen;   
+        border: 5px solid yellowgreen;
     }
 
     .ml {
@@ -57,91 +45,127 @@
     body {
         padding: 0;
     }
-    
-    header, footer {
+
+    header,
+    footer {
         margin-left: -5%;
         margin-right: -5%;
     }
-    
-    address, .project-info, .logo, nav  {
+
+    address,
+    .project-info,
+    .logo,
+    nav {
         margin-left: 5%;
         margin-right: 5%;
     }
 
 
     .business-directory {
-        grid-template-columns: 1fr 1fr; 
-        /* padding: 0 5px;  */
-        
-    } 
+        grid-template-columns: 1fr 1fr;
+    }
 
-    
-    /* nav {
-        display: none;
-    } */
+
+
 
     .logo img {
         max-width: 90px;
     }
 
 
-    .logo h1, h4 {
+    .logo h1,
+    h4 {
         font-size: 18px;
-        
+
     }
 
-    #menu {
-        display: block;
+    .navbar {
+        margin-left: 0;
+        padding-left: 1px;
+
+        margin-right: 8%; 
+
+  
     }
 
-    .grid-container {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        margin: 10px auto;
-        padding: 0;
-        gap: 10px;
-        width: 70%;
-    }
-
-    .navigation {
+    .nav-links {
         display: none;
         flex-direction: column;
         position: absolute;
-        top: 100%;
-        right: 0;
-        background-color: #3c0965;
-        width: 200px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, .1);
-        border-radius: 0 0 5px 5px;
-        padding: 1rem 0;
+        top: 90px;
+        /* Position below the navbar */
+        /* left: auto; */
+        width: 100%;
+        /* Match navbar color */
+        background: rgba(6, 71, 139, 0.9);
+        text-align: center;
+        padding: 10px 0;
+        transform: translateY(-100%);
+        /* Initially offscreen */
+        transition: transform 0.3s ease-in-out;
+        /* Smooth animation */
     }
 
-    .navigation.show {
+    .nav-links.show {
         display: flex;
+        transform: translateY(0);
+        /* Push content down */
+        width: 120%;
     }
 
-    .navigation li {
-        margin: 0;
+    .nav-links li {
+        margin: 10px 0;
     }
 
-    .navigation a {
-        padding: .5rem 1rem;
-        text-align: left;
+    .hamburger {
+        display: block;
     }
-
-
 }
 
-@media (max-width: 900px) 
-{
+/* Hero Image Section */
+.hero-image-container {
+    position: relative;
+    width: auto;
+    max-height: 60vh;
+    overflow: hidden;
+    transition: margin-top 0.3s ease-in-out;
+    /* Smooth transition */
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+
+.hero-button {
+    bottom: 5%;
+    /* Moves button slightly up for better visibility */
+    right: 8%;
+    /* Adjusts spacing */
+    padding: 0.5rem 1.5rem;
+    /* Scales padding for smaller screens */
+    font-size: 14px;
+    /* Slightly smaller font on smaller screens */
+}
+
+
+
+
+
+
+@media (max-width: 900px) {
+
 
     .mr {
         margin-right: 8px;
     }
 
-    /* section {
-        width: 100%;
-    } */
+    .hero-text {
+        font-size: 14px;
+        margin-left: 5px;
+    }
 
     .business-directory {
         display: flex;
@@ -162,12 +186,10 @@
         /* margin-left: 0; */
     }
 
- 
+
 
     footer img {
         align-self: center;
         max-width: 230px;
     }
 }
-
-
