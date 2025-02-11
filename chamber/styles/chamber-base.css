@@ -86,6 +86,9 @@ a:hover {
 
 }
 
+
+
+
 /* Buttons */
 .button {
     display: inline-block;
@@ -139,10 +142,16 @@ footer,
     height: auto;
 }
 
-.text-logo h1,
+.text-logo span,
 h4 {
     color: var(--white);
     margin: 0;
+}
+
+.text-logo span{
+    font-size: 26px;
+    margin-top: 5px;
+    font-weight: bold;
 }
 
 
