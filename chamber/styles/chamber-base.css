@@ -104,11 +104,9 @@ a:hover {
 
 }
 
-/* .toggle-view {
-    justify-self: center;
-    width: 240px;
-} */
-
+.h1-title {
+    display: none;
+}
 
 .toggle-view {
     display: block;
