@@ -142,7 +142,23 @@ footer,
     height: auto;
 }
 
-.text-logo span,
+.text-logo p:first-child {
+    font-size: 26px;
+    font-weight: bold; 
+    color: var(--white);
+    margin-top: 5px;
+    margin-bottom: 0;
+}
+
+.text-logo p:last-child {
+    font-size: 18px;
+    color: var(--white);
+    margin: 0;
+}
+
+
+
+/* .text-logo p,
 h4 {
     color: var(--white);
     margin: 0;
@@ -152,7 +168,7 @@ h4 {
     font-size: 26px;
     margin-top: 5px;
     font-weight: bold;
-}
+} */
 
 
 /* Navigation Bar */
