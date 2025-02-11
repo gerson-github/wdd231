@@ -37,13 +37,19 @@ Media queries ensure the site adapts to smaller screens, such as mobile devices.
 
 /* Root Variables */
 :root {
-    --primary-color: #003366; /* Dark Blue */
-    --secondary-color: #FFA500; /* Orange */
-    --secondary-hover: #f9e5a0 ;  /* #E59400 Darker Orange, #bf8249 */
-    --background-color: #F5F5F5; /* Light Gray */
+    --primary-color: #003366;
+    /* Dark Blue */
+    --secondary-color: #FFA500;
+    /* Orange */
+    --secondary-hover: #f9e5a0;
+    /* #E59400 Darker Orange, #bf8249 */
+    --background-color: #F5F5F5;
+    /* Light Gray */
     --background-bar-menu: #a6c9e7;
-    --text-color: #333333; /* Dark Gray #333333 */
-    --white: #FFFFFF; /* White */
+    --text-color: #333333;
+    /* Dark Gray #333333 */
+    --white: #FFFFFF;
+    /* White */
     --font-primary: 'Roboto', sans-serif;
 }
 
@@ -62,7 +68,8 @@ body {
 }
 
 
-html, body {
+html,
+body {
     overflow-x: hidden;
     width: 100%;
 }
@@ -71,19 +78,28 @@ body {
     padding: 0 5% 0 5%;
 }
 
-header, footer {
+header,
+footer {
     margin-left: -5%;
     margin-right: -5%;
 }
 
-address, .project-info, .logo, nav  {
+address,
+.project-info,
+.logo,
+nav {
     margin-left: 5%;
     margin-right: 5%;
 }
 
 
 /* Typography */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: var(--font-primary);
     color: var(--primary-color);
     margin-bottom: 1rem;
@@ -98,7 +114,7 @@ p {
 a {
     /* color: var(-); */
     text-decoration: none;
-} 
+}
 
 a:hover {
     text-decoration: underline;
@@ -122,13 +138,22 @@ a:hover {
 
 }
 
+/* .toggle-view {
+    justify-self: center;
+    width: 240px;
+} */
+
 
 .toggle-view {
-    width: 20% ;
+    display: block; /* Ensures it takes full width */
+    margin: 0 auto; /* Centers the button horizontally */
+    width: 240px;
+    text-align: center; /* Centers text inside the button */
 }
 
-
-header, footer, #menu {
+header,
+footer,
+#menu {
     background-color: var(--primary-color);
 }
 
@@ -137,7 +162,7 @@ header, footer, #menu {
     display: flex;
     flex-wrap: nowrap;
     margin-right: auto;
-    margin-left:5px;
+    margin-left: 5px;
 }
 
 
@@ -147,10 +172,11 @@ header, footer, #menu {
     height: auto;
 }
 
-.text-logo h1, h4 {
+.text-logo h1,
+h4 {
     color: var(--white);
     margin: 0;
-} 
+}
 
 
 /* Navigation Bar */
@@ -161,7 +187,8 @@ header, footer, #menu {
     background-color: var(--primary-color);
     padding: 10px 20px;
     position: relative;
-    z-index: 2; /* Ensure it stays above the image */
+    z-index: 2;
+    /* Ensure it stays above the image */
 
 
 
@@ -174,12 +201,12 @@ header, footer, #menu {
 
 }
 
-.navbar .img-user-profile{
-  width: 45px;  
-  height: 45px;
- 
-  margin-right: 2px;
-  margin-top: 13px;
+.navbar .img-user-profile {
+    width: 45px;
+    height: 45px;
+
+    margin-right: 2px;
+    margin-top: 13px;
 
 }
 
@@ -220,7 +247,7 @@ header, footer, #menu {
     border: none;
     cursor: pointer;
     text-align: center;
-  
+
 }
 
 /* Main Content */
@@ -229,14 +256,14 @@ main {
     grid-template-columns: 2fr 1fr 1fr;
     grid-template-rows: auto auto auto;
     gap: 1rem;
+
     
-    /* padding: 0 160px 15px 160px;  */
-    
-}    
+
+}
 
 main h1 {
     /* padding-left: 1.5%; */
-    margin: 0; 
+    margin: 0;
     font-size: 25px;
 }
 
@@ -245,9 +272,11 @@ main h1 {
 }
 
 .hero-image-container {
-    position: relative; /* Ensures absolute positioning works inside */
+    position: relative;
+    /* Ensures absolute positioning works inside */
     width: 100%;
-    max-height: 9000px; /* Adjust as needed */
+    max-height: 9000px;
+    /* Adjust as needed */
     overflow: hidden;
 }
 
@@ -281,26 +310,16 @@ main h1 {
     font-size: 16px;
     padding: 0.58vw 2vw;
 }
-
 .hero-button:hover {
     background-color: #ebeef1;
     color: var(--primary-color);
 }
-
-
-
-
-
-
 .card {
     display: flex;
     flex-direction: column;
     background-color: var(--white);
-    /* border-radius: 8px; */
-    /* border: 1px solid #ccc; */
-    /* box-shadow: 0 2px 12px 4px rgba(0, 0, 0, 0.1); */
     height: 100%;
-    /* text-align: center; */
+
 }
 
 
@@ -311,14 +330,14 @@ main h1 {
     padding: 10px;
     align-items: center;
     justify-content: center;
-    /* border-top-left-radius: 10px;
-    border-top-right-radius: 10px; */
+
     text-align: left;
     font-size: 19px;
 }
 
 .card ol {
-    padding-left: 20px; /* Adjust as needed */
+    padding-left: 20px;
+    /* Adjust as needed */
     margin: 0;
     list-style-position: inside;
     text-align: left;
@@ -344,11 +363,11 @@ main h1 {
     color: var(--text-color);
 }
 
-.current-weather{
+.current-weather {
     display: flex;
     align-items: flex-start;
     /* text-align: center; */
-    width: auto; 
+    width: auto;
     gap: 50px;
     padding: 0px;
 }
@@ -360,10 +379,10 @@ main h1 {
     margin: 0 0 0 25px;
 }
 
-.current-weather p{
+.current-weather p {
     text-align: left;
     padding: 0;
-    margin: 0 5px ;
+    margin: 0 5px;
     font-weight: bold;
     padding-top: 5px;
 }
@@ -371,35 +390,37 @@ main h1 {
 .weather-info {
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Label on left, value on right */
-    
+    grid-template-columns: 1fr 1fr;
+    /* Label on left, value on right */
+
     text-align: left;
     margin: 5px;
-  }
+}
 
-  .weather-forecast {
+.weather-forecast {
     width: 260px;
     /* gap: 11px 15px;     */
     font-size: 18px;
     /* padding: 1px; */
-    
-  }
- 
-  
-  .weather-forecast dd {
-    margin: 0; /* Remove default spacing */
-    font-weight: bold; 
-  }
-  
+
+}
+
+
+.weather-forecast dd {
+    margin: 0;
+    /* Remove default spacing */
+    font-weight: bold;
+}
+
 
 
 /* Business Directory */
 .business-directory {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr; 
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
     padding-bottom: 10px;
-} 
+}
 
 /* List View */
 .business-directory.list-view {
@@ -416,7 +437,10 @@ main h1 {
 }
 
 .business-card p {
-    border-bottom: 1px solid gray; font-size: 12px; margin: 0; padding: 0;
+    border-bottom: 1px solid gray;
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
 }
 
 /* Adjust for List View */
@@ -425,13 +449,13 @@ main h1 {
     margin-bottom: 10px;
 }
 
-.business-card-detail{
+.business-card-detail {
     display: flex;
     align-items: flex-start;
     text-align: center;
-    width: auto; 
+    width: auto;
     padding: 0px;
- 
+
 }
 
 .business-card-detail img {
@@ -462,14 +486,12 @@ footer {
     color: var(--white);
 }
 
-address, .project-info {
+address,
+.project-info {
     flex: 1;
     min-width: 250px;
-    /* margin: 10px; */
-    /* text-align: left; */
     font-style: normal;
 }
-
 
 
 address {
@@ -486,7 +508,6 @@ footer p {
 }
 
 footer img {
-    /*width: 50px;  Adjust the size as needed */
     max-width: 230px;
     height: auto;
     flex-shrink: 0;
@@ -494,8 +515,9 @@ footer img {
 
 
 
-footer address, img, div {
+footer address,
+img,
+div {
     align-self: flex-start;
 
 }
-
