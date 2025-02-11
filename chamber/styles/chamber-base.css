@@ -77,6 +77,15 @@ a:hover {
     text-decoration: underline;
 }
 
+.home {
+    font-family: var(--font-primary);
+    color: var(--primary-color);
+    font-size: 26px;
+
+    font-weight: bold;
+
+}
+
 /* Buttons */
 .button {
     display: inline-block;
