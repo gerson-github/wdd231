@@ -81,7 +81,7 @@ a:hover {
     font-family: var(--font-primary);
     color: var(--primary-color);
     font-size: 26px;
-
+    margin-top: 5px;
     font-weight: bold;
 
 }
