@@ -2,6 +2,9 @@
 const currYear = (new Date()).getFullYear();
 const lastModified = document.lastModified;
 
+document.getElementById("lastModified").textContent += lastModified;
+document.getElementById("currentYear").textContent = currYear;
+
 document.addEventListener("DOMContentLoaded", function () {
     const menuButton = document.querySelector(".hamburger");
     const navLinks = document.querySelector(".nav-links");
@@ -49,7 +52,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                 <div class="business-card-detail">
                     <img src="images/${member.image}" alt="${member.name}" width="80">
                     <div>
-                        <dl class="weather-info">
+                        <dl class="card-content">
                             <dt>EMAIL:</dt>
                             <dd><a href="mailto:${member.email || '#'}">${member.email || "N/A"}</a></dd>
                             <dt>PHONE:</dt>
