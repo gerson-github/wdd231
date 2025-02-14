@@ -15,33 +15,17 @@
     /* White */
     --font-primary: 'Roboto', sans-serif;
 }
-
-
-
 body {
     font-family: var(--font-primary);
     background-color: var(--background-color);
     color: var(--text-color);
     line-height: 1.6;
 }
-
-
 html,
 body {
     overflow-x: hidden;
     width: 100%;
 }
-
-/* body {
-    padding: 0 5% 0 5%;
-} */
-
-header,
-footer {
-    margin-left: -5%;
-    margin-right: -5%;
-}
-
 /* Typography */
 h1,
 h2,
@@ -60,10 +44,10 @@ p {
     margin-bottom: 1rem;
 }
 
- a {
+a {
     text-decoration: none;
     color: var(--text-color);
-} 
+}
 
 a:hover {
     text-decoration: underline;
@@ -75,12 +59,7 @@ a:hover {
     font-size: 26px;
     margin-top: 5px;
     font-weight: bold;
-
 }
-
-
-
-
 /* Buttons */
 .button {
     display: inline-block;
@@ -92,25 +71,18 @@ a:hover {
     font-weight: bold;
     transition: background-color 0.3s ease;
 }
-
 .button:hover {
     background-color: #d8d9db;
     color: var(--primary-color);
-
 }
-
-.h1-title {
+ .h1-title {
     display: none;
-}
-
+} 
 .toggle-view {
     display: block;
-    /* Ensures it takes full width */
     margin: 0 auto;
-    /* Centers the button horizontally */
     width: 240px;
     text-align: center;
-    /* Centers text inside the button */
 }
 
 header,
@@ -118,6 +90,7 @@ footer,
 #menu {
     background-color: var(--primary-color);
 }
+
 /*header*/
 header {
     display: grid;
@@ -125,84 +98,82 @@ header {
 }
 
 /* Navigation Bar */
-.navbar 
-{
+.navbar {
     display: flex;
-    justify-content: space-between; /* Space out elements */
-    align-items: center; /* Center items vertically */
+    justify-content: space-between;
+    align-items: center;
     padding: 10px 20px;
 }
 
-    /* Navigation Links */
-    .nav-links {
-        display: flex;
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
+/* Navigation Links */
+.nav-links {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
 
-    .nav-links li {
-        margin: 0 10px;
-    }
+.nav-links li {
+    margin: 0 10px;
+}
 
-    .nav-links a {
-        text-decoration: none;
-        color: white;
-        font-size: 1rem;
-        padding: 8px 12px;
-        transition: 0.3s;
-    }
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    padding: 8px 12px;
+    transition: 0.3s;
+}
 
-    .nav-links a:hover {
-        background-color: white;
-        color: #06478b;
-        border-radius: 5px;
-    }
+.nav-links a:hover {
+    background-color: white;
+    color: #06478b;
+    border-radius: 5px;
+}
 
-    .nav-hamburger-button {
-        display: flex;
-        gap: 15px;
-        align-items: center;
-    }
+.nav-hamburger-button {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
 
-    /* logo and text */
-    .logo 
-    {
-        display: flex;
-        flex-wrap: nowrap;
-        margin-right: auto;
-        margin-left: 5px; 
-    }
-        .logo img 
-        {
-            max-width: 120px;
-            height: auto;
-        }
-        .logo .text-logo p:first-child 
-        {
-            font-size: 26px;
-            font-weight: bold; 
-            color: var(--white);
-            margin-top: 5px;
-            margin-bottom: 0;
-        }
-        .logo .text-logo p:last-child 
-        {
-            font-size: 18px;
-            color: var(--white);
-            margin: 0;
-        }
-    /*circle user image  */
-    .img-user-profile 
-    {
-        width: 45px;
-        height: 45px;
-        margin-right: 2px;
-        margin-top: 13px;
-    }
+/* logo and text */
+.logo {
+    display: flex;
+    flex-wrap: nowrap;
+    margin-right: auto;
+    margin-left: 5px;
+}
+
+.logo img {
+    max-width: 120px;
+    height: auto;
+}
+
+.logo .text-logo p:first-child {
+    font-size: 26px;
+    font-weight: bold;
+    color: var(--white);
+    margin-top: 5px;
+    margin-bottom: 0;
+}
+
+.logo .text-logo p:last-child {
+    font-size: 18px;
+    color: var(--white);
+    margin: 0;
+}
+
+/*circle user image  */
+.img-user-profile {
+    width: 45px;
+    height: 45px;
+    margin-right: 2px;
+    margin-top: 13px;
+}
+
 /*second row: header - big image */
-.hero-image-container 
-{
+.hero-image-container {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -211,21 +182,13 @@ header {
     max-height: 100%;
     background-color: var(--background-color);
 }
-    .hero-image 
-    {
-        width: 85%;
-        height: auto;
-        max-height: 50vh; /* Ensures it doesn't get too tall */
-        object-fit: cover;
-    }    
-  
-/* .hero-text {
-   position: absolute;
-   top: 5%;
-   left: 5%;
-   color: white;
-   font-size: 1.5rem;
-} */
+
+.hero-image {
+    width: 95%;
+    height: auto;
+    max-height: 50vh;
+    object-fit: cover;
+}
 
 /* Hamburger Menu */
 .hamburger {
@@ -238,30 +201,30 @@ header {
     text-align: center;
 
 }
+
 /* Main Content */
 main {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
     grid-template-rows: auto auto auto;
-    gap: 1rem;
-    position: relative; 
-    padding-left: 55px;
-    padding-right: 55px; 
+    gap: 0.9rem;
+    position: relative;
 }
+
 main h1 {
     margin: 0;
     font-size: 25px;
 }
+
 .span-tree-columns {
     grid-column: span 3;
 }
+
 /* Button positioned in the bottom right corner */
 .hero-button {
     position: absolute;
     bottom: 5%;
     right: 10%;
-    /* Aligns to the bottom right */
-    /* left: 85%;  */
     background-color: var(--primary-color);
     color: white;
     border: none;
@@ -299,15 +262,10 @@ main h1 {
 
 .card ol {
     padding-left: 20px;
-    /* Adjust as needed */
     margin: 0;
     list-style-position: inside;
     text-align: left;
 }
-
-
-
-
 /* Event Calendar */
 .event-calendar {
     background-color: var(--white);
@@ -328,7 +286,6 @@ main h1 {
 .current-weather {
     display: flex;
     align-items: flex-start;
-    /* text-align: center; */
     width: auto;
     gap: 50px;
     padding: 0px;
@@ -357,20 +314,26 @@ main h1 {
     margin: 5px;
 }
 
-.card-content
-{
-   display: grid; 
-   grid-template-columns: 0.7fr 0.8fr;
-   text-align: left;
-   margin: 12px;
-   width: 100%;
-   gap: 8px;
+.card-content {
+    display: grid;
+    grid-template-columns: 0.7fr 0.8fr;
+    text-align: left;
+    justify-self: start;
+    margin: 2%;
+    width: 100%;
+    gap: 8px;
 
+}
+
+.card-content dd
+{
+    margin: 0;
 }
 .weather-forecast {
     width: 260px;
     font-size: 18px;
 }
+
 .weather-forecast dd {
     margin: 0;
     /* Remove default spacing */
@@ -442,8 +405,7 @@ main h1 {
 }
 
 
-footer 
-{
+footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -451,50 +413,52 @@ footer
     padding: 10px;
     color: var(--white);
 }
-    footer p 
-    {
-        color: var(--white);
-        margin-bottom: 0;
-    }
-    footer img 
-    {
-        max-width: 230px;
-        height: auto;
-        flex-shrink: 0;
-    }
-    footer address,img,div 
-    {
-        align-self: flex-start;
-    }
-    address, .project-info 
-    {
-        flex: 1;
-        min-width: 250px;
-        font-style: normal;
-    }
 
-    address 
-    {
-        text-align: left;
-    }
-        address a 
-        {
-            color: var(--white);        
-        }
+footer p {
+    color: var(--white);
+    margin-bottom: 0;
+}
 
-    .project-info 
-    {
-        text-align: right;
-        line-height: 0.5;
-    }
-        .project-info p:first-child 
-        {
-            margin-top: 8px;
-        }
+footer img {
+    max-width: 230px;
+    height: auto;
+    flex-shrink: 0;
+}
 
-    address,
-    .project-info,
-    nav {
-        margin-left: 7%;
-        margin-right: 7%;
-    }
+footer address,
+img,
+div {
+    align-self: flex-start;
+}
+
+address,
+.project-info {
+    flex: 1;
+    min-width: 250px;
+    font-style: normal;
+}
+
+address {
+    text-align: left;
+}
+
+address a {
+    color: var(--white);
+}
+
+.project-info {
+    text-align: right;
+    line-height: 0.5;
+}
+
+.project-info p:first-child {
+    margin-top: 8px;
+}
+
+address,
+.project-info,
+main,
+.navbar {
+    padding-left: 55px;
+    padding-right: 55px;
+}
