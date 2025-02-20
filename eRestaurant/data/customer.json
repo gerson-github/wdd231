@@ -1,0 +1,49 @@
+{
+    "customer": [
+        {
+          "customer_name": "John Doe",
+          "phone_number": "555-1234",
+          "party_size": 4,
+          "check_in": "2025-02-19T18:30:00",
+          "estimated_wait_time": "30 minutes",
+          "table_preference": "Window",
+          "special_notes": "Celebrating a birthday"
+        },
+        {
+          "customer_name": "Alice Smith",
+          "phone_number": "555-5678",
+          "party_size": 2,
+          "check_in": "2025-02-19T19:00:00",
+          "estimated_wait_time": "15 minutes",
+          "table_preference": "Booth",
+          "special_notes": "Vegetarian meal preferred"
+        },
+        {
+          "customer_name": "Michael Johnson",
+          "phone_number": "555-9876",
+          "party_size": 6,
+          "check_in": "2025-02-19T19:45:00",
+          "estimated_wait_time": "45 minutes",
+          "table_preference": "Patio",
+          "special_notes": "High chair needed"
+        },
+        {
+          "customer_name": "Emily Davis",
+          "phone_number": "555-4321",
+          "party_size": 3,
+          "check_in": "2025-02-19T20:15:00",
+          "estimated_wait_time": "20 minutes",
+          "table_preference": "Near bar",
+          "special_notes": "Gluten-free options requested"
+        },
+        {
+          "customer_name": "Robert Brown",
+          "phone_number": "555-6789",
+          "party_size": 5,
+          "check_in": "2025-02-19T21:00:00",
+          "estimated_wait_time": "35 minutes",
+          "table_preference": "Corner",
+          "special_notes": "Anniversary celebration"
+        }
+      ]
+}

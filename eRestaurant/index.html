@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="WDD 131 - Dynamic Web Fundamentals">
+    <meta name="author" content="Gerson Martins de Oliveira">
+    <title>WDD 131 - Dynamic Web Fundamentals - Gerson M Oliveira</title>
+    <link rel="stylesheet" href="styles/eRestaurante-large.css"> 
+    <link rel="stylesheet" href="styles/eRestaurante.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet" type="text/css">
+    <link rel="icon" href="data:,">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img id="product-image" src="images/logo-img.png" alt="Placeholder Image">
+        </div>
+        <p>eRestaurant Back-Office System</p>
+        <div class="hamburger-menu" id="hamburgerMenu">
+            <img src="images/hamburger-img.png" width="30" alt="Menu">
+            <div class="hamburger-options" id="hamburgerOptions">
+                <ul>
+                    <li>Menu Upload</li>
+                    <li>Help</li>
+                    <li>Search</li>
+                    <li>Announcements</li>
+                    <li>User</li>
+                </ul>
+            </div>
+        </div>
+        <div class="menu-container">
+            <button type="button" class="menu-upload">Menu Upload
+                <!-- <img src="images/upload-img.png" width="30" alt="User Icon">    -->
+            </button>
+            <button type="button"  class="menu-upload ">Help
+                <!-- <img src="images/help-img.png" width="30" alt="User Icon">   --> 
+            </button>
+        </div>
+
+        <nav class="nav-menu">
+           <ul class="icon-list">
+                <li><img src="images/speaker-img.png" data-action="speaker"  width="30" alt=""></li>
+                <li><img src="images/magnifier-img.png" data-action="search" width="30" alt=""></li>
+                <li><img src="images/bell-img.png" data-action="notifications" width="30" alt=""></li>
+                <li><img src="images/config-img.png" data-action="settings" width="30" alt=""></li>
+                <li><img src="images/user-img.png" data-action="user" width="30" alt=""></li>
+            </ul>
+        </nav>
+
+        
+    </header>
+    <main>
+        <section class="dynamic-content">
+            <div class="date-time">
+                <h3>Date/time: </h3>  <span class="name" id="current-date"></span>
+            </div>
+            <div id="speaker" class="announcement-bar" style="display: none;">
+                <p>🎉 Today's Special Offer: Enjoy 20% off on all pasta dishes! 🎉</p>
+                <p>New Menu Items: Check out our seasonal specials!</p>
+                <p>Holiday Hours: We will be closed on Christmas Day!</p>
+                <p> Loyalty Program Updates: free appetizer!</p>
+            </div>
+
+            <div id="search" style="display: none;">
+                <div class="pill">
+                    <img src="images/magnifier-img.png" width="20" alt="Search Icon">
+                    <input type="search" placeholder="Search...">
+                </div>
+            </div>
+
+        </section>
+
+        <section >
+            <div id="notifications" style="display: block;">
+                <h3>Alert</h3>
+                <div >
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Decription</th>
+                                <th>Message</th>
+                                <th>Reason</th>
+                                <th>Task</th>
+                                <th>Action</th>  
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td data-label="Description">New Order Notification</td>
+                                <td data-label="Message">New order received for table #5. Please prepare the dishes</td>
+                                <td data-label="Reason">Notifying kitchen staff or waiters about incoming orders</td>
+                                <td data-label="Task">Click to view the order details</td>
+                                 <td class="action">
+                                    <img class="img-pencil" src="images/pencil-img.png" alt="Edit">
+                                    <img class="img-trash" src="images/trash-img.png" alt="Delete">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+            </div>
+        </section>
+        <section  >
+            <div style="display: flex; justify-content: space-between; align-items: end; width: 100%;">
+                <h3>Wait List</h3>
+                <button id="add-wait-list" type="button"  class="button-add">+Add</button>
+            </div>
+            <table id="wait-list-table" >
+                <thead>
+                    <tr>
+                        
+                        <th>Customer Name</th>
+                        <th>Phone Number</th>
+                        <th>Party Size</th>
+                        <th>Check-In</th>
+                        <th>Estimated Wait time</th>
+                        <th>Table Preference</th>
+                        <th>Special Notes</th>
+                        <th>Action</th>  
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- <tr>
+                        <td data-label="Action">    
+                            <img class="img-pencil" src="images/pencil-img.png" alt="Edit">
+                            <img class="img-trash" src="images/trash-img.png" alt="Delete">
+                        </td>
+                        <td data-label="Customer Name">John Carter</td>
+                        <td data-label="Phone Number">123 456-5677</td>
+                        <td data-label="Party Size">4</td>
+                        <td data-label="Check-In">7:35 pm</td>
+                        <td data-label="Estimated Wait Time">45 min</td>
+                        <td data-label="Table Preference">Central</td>
+                        <td data-label="Special Notes">n/a</td>
+                    </tr> -->
+                </tbody>
+            </table>
+        </section>
+        <section class="active-tables-and-orders">
+            <div style="display: flex; justify-content: space-between; align-items: end; width: 100%;">
+                <h3>Active Tables and Orders</h3>
+                <button id="add-active-table" type="button"  class="button-add">+Add</button>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Table Number</th>
+                        <th>Table Status</th>
+                        <th>Party Size</th>
+                        <th>Occupied Time</th>
+                        <th>Elapse Time</th>
+                        <th>Server Name</th>
+                        <th>Order Status</th>
+                        <th>Notes</th>
+                        <th>Action</th>  
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="Table Number">tbl#01</td>
+                        <td data-label="Status">Occupied</td>
+                        <td data-label="Capacity">4</td>
+                        <td data-label="Wait Time">45 min</td>
+                        <td data-label="Time Seated">05 min</td>
+                        <td data-label="Server">Ted</td>
+                        <td data-label="Order Status">Order Served</td>
+                        <td data-label="Notes">n/a</td>                    
+                        <td class="action">
+                            <img class="img-pencil" src="images/pencil-img.png" alt="Edit">
+                            <img class="img-trash" src="images/trash-img.png" alt="Delete">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td data-label="Table Number">tbl#02</td>
+                        <td data-label="Status">Free</td>
+                        <td data-label="Capacity">2</td>
+                        <td data-label="Wait Time">0 min</td>
+                        <td data-label="Time Seated">0 min</td>
+                        <td data-label="Server">Willian</td>
+                        <td data-label="Order Status"></td>
+                        <td data-label="Notes">n/a</td>                    
+                        <td class="action">
+                            <img class="img-pencil" src="images/pencil-img.png" alt="Edit">
+                            <img class="img-trash" src="images/trash-img.png" alt="Delete">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td data-label="Table Number">tbl#03</td>
+                        <td data-label="Status">Cleaning</td>
+                        <td data-label="Capacity">6</td>
+                        <td data-label="Wait Time">0 min</td>
+                        <td data-label="Time Seated">0 min</td>
+                        <td data-label="Server">Ted</td>
+                        <td data-label="Order Status"></td>
+                        <td data-label="Notes">n/a</td>                    
+                        <td class="action">
+                            <img class="img-pencil" src="images/pencil-img.png" alt="Edit">
+                            <img class="img-trash" src="images/trash-img.png" alt="Delete">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <button id="add-active-table" type="button"  class="button-add">+Add</button>
+        </section>
+    </main>
+    <footer>
+        <div>&copy; <span class="currentYear" id="currentYear"></span><img class="icone" src="images/canada_flag.jfif" alt="icon of Canada">Gerson Martins de Oliveira <img class="icone" src="images/canada_flag.jfif" alt="icon of Canada">Canada </div>
+        <div class="name" id="lastModified">Page last modified:</div>
+    </footer>
+    <script src="scripts/eRestaurant.js" defer></script>
+    <script src="scripts/eRestaurant-modal.js" defer></script>
+    
+</body>
+
+<!-- Modal -->
+<div id="modal-wait-list" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <form id="waitlist-form">
+            <div class="form-group">
+                <label for="customer-name">Customer Name:</label>
+                <input type="text" id="customer-name" name="customer-name" required>
+            </div>
+            <div class="form-group">
+                <label for="phone-number">Phone Number:</label>
+                <input type="text" id="phone-number" name="phone-number" required>
+            </div>
+            <div class="form-group">
+                <label for="party-size">Party Size:</label>
+                <input type="number" id="party-size" name="party-size" min="1" required>
+            </div>
+            <div class="form-group">
+                <label for="check-in">Check-in:</label>
+                <input type="datetime-local" id="check-in" name="check-in" required>
+            </div>
+            <div class="form-group">
+                <label for="estimate-wait">Estimate Wait Time (minutes):</label>
+                <input type="number" id="estimate-wait" name="estimate-wait" min="0" required>
+            </div>
+            <div class="form-group">
+                <label for="table-preference">Table Preference:</label>
+                <select id="table-preference" name="table-preference" required>
+                    <option value="" disabled selected>Select an option</option>
+                    <option value="indoor">Indoor</option>
+                    <option value="outdoor">Outdoor</option>
+                    <option value="window">Window</option>
+                </select>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</div>
+
+<!-- Modal -->
+<div id="modal-active-table" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <span>This is a Demo application. </span><br>
+        <span>The modal form for Active Table and Orders is not available.</span>
+    </div>
+</div>
+
+
+
+
+</html>
+
