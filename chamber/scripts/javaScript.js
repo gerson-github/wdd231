@@ -75,17 +75,23 @@ document.addEventListener("DOMContentLoaded", async function () {
     loadBusinessData();
 });
 
-document.addEventListener("DOMContentLoaded", function() {
-    const lastVisit = localStorage.getItem("lastVisit"),
-          messageElement = document.getElementById("message-last-visit");
 
-        if (lastVisit) {
-            messageElement.textContent = `Welcome back! Your last visit was on ${lastVisit}.`;
-        } else {
-            messageElement.textContent = "Welcome! This is your first visit.";
-        }
+function fcLastVisit() {
+    const lastVisit = localStorage.getItem("lastVisit"),
+    messageElement = document.getElementById("message-last-visit");
+
+    if (lastVisit) {
+    messageElement.textContent = `Welcome back! Your last visit was on ${lastVisit}.`;
+    } else {
+    messageElement.textContent = "Welcome! This is your first visit.";
+    }
 
     const currentDate = (new Date).toLocaleString();
     localStorage.setItem("lastVisit", currentDate);
-});
+}
+
+
+document.addEventListener('DOMContentLoaded', fcLastVisit);
+
+
 
