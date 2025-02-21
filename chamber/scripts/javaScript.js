@@ -76,22 +76,22 @@ document.addEventListener("DOMContentLoaded", async function () {
 });
 
 
-function fcLastVisit() {
-    const lastVisit = localStorage.getItem("lastVisit"),
-    messageElement = document.getElementById("message-last-visit");
+// function fcLastVisit() {
+//     const lastVisit = localStorage.getItem("lastVisit"),
+//     messageElement = document.getElementById("message-last-visit");
 
-    if (lastVisit) {
-    messageElement.textContent = `Welcome back! Your last visit was on ${lastVisit}.`;
-    } else {
-    messageElement.textContent = "Welcome! This is your first visit.";
-    }
+//     if (lastVisit) {
+//     messageElement.textContent = `Welcome back! Your last visit was on ${lastVisit}.`;
+//     } else {
+//     messageElement.textContent = "Welcome! This is your first visit.";
+//     }
 
-    const currentDate = (new Date).toLocaleString();
-    localStorage.setItem("lastVisit", currentDate);
-}
+//     const currentDate = (new Date).toLocaleString();
+//     localStorage.setItem("lastVisit", currentDate);
+// }
 
 
-document.addEventListener('DOMContentLoaded', fcLastVisit);
+// document.addEventListener('DOMContentLoaded', fcLastVisit);
 
 
 
