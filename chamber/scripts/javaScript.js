@@ -79,9 +79,11 @@ document.addEventListener("DOMContentLoaded", function() {
     const lastVisit = localStorage.getItem("lastVisit"),
           messageElement = document.getElementById("message");
 
-    messageElement.textContent = lastVisit
-        ? `Welcome back! Your last visit was on ${lastVisit}.`
-        : "Welcome! This is your first visit.";
+        if (lastVisit) {
+            messageElement.textContent = `Welcome back! Your last visit was on ${lastVisit}.`;
+        } else {
+            messageElement.textContent = "Welcome! This is your first visit.";
+        }
 
     const currentDate = (new Date).toLocaleString();
     localStorage.setItem("lastVisit", currentDate);
