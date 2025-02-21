@@ -65,6 +65,7 @@
     }
 
     .action {
+        display: flex;
         justify-content: end; 
     }
 

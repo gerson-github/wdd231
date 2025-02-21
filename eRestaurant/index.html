@@ -1,18 +1,26 @@
 <!DOCTYPE html>
 <html lang="en-us">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="WDD 131 - Dynamic Web Fundamentals">
     <meta name="author" content="Gerson Martins de Oliveira">
     <title>WDD 131 - Dynamic Web Fundamentals - Gerson M Oliveira</title>
-    <link rel="stylesheet" href="styles/eRestaurante-large.css"> 
+    <link rel="stylesheet" href="styles/eRestaurante-large.css">
     <link rel="stylesheet" href="styles/eRestaurante.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet"
+        type="text/css">
     <link rel="icon" href="data:,">
 </head>
+<div id="success-message" class="success-message">
+    Saved successfully!
+</div>
+
+
+
 <body>
     <header>
         <div class="logo">
@@ -23,7 +31,7 @@
             <img src="images/hamburger-img.png" width="30" alt="Menu">
             <div class="hamburger-options" id="hamburgerOptions">
                 <ul>
-                    <li>Menu Upload</li>
+                    <li>Customer Menu</li>
                     <li>Help</li>
                     <li>Search</li>
                     <li>Announcements</li>
@@ -32,17 +40,17 @@
             </div>
         </div>
         <div class="menu-container">
-            <button type="button" class="menu-upload">Menu Upload
+            <button type="button" >Customer Menu
                 <!-- <img src="images/upload-img.png" width="30" alt="User Icon">    -->
             </button>
-            <button type="button"  class="menu-upload ">Help
-                <!-- <img src="images/help-img.png" width="30" alt="User Icon">   --> 
+            <button type="button" >Help
+                <!-- <img src="images/help-img.png" width="30" alt="User Icon">   -->
             </button>
         </div>
 
         <nav class="nav-menu">
-           <ul class="icon-list">
-                <li><img src="images/speaker-img.png" data-action="speaker"  width="30" alt=""></li>
+            <ul class="icon-list">
+                <li><img src="images/speaker-img.png" data-action="speaker" width="30" alt=""></li>
                 <li><img src="images/magnifier-img.png" data-action="search" width="30" alt=""></li>
                 <li><img src="images/bell-img.png" data-action="notifications" width="30" alt=""></li>
                 <li><img src="images/config-img.png" data-action="settings" width="30" alt=""></li>
@@ -50,12 +58,13 @@
             </ul>
         </nav>
 
-        
+
     </header>
     <main>
+
         <section class="dynamic-content">
             <div class="date-time">
-                <h3>Date/time: </h3>  <span class="name" id="current-date"></span>
+                <h3>Date/time: </h3> <span class="name" id="current-date"></span>
             </div>
             <div id="speaker" class="announcement-bar" style="display: none;">
                 <p>🎉 Today's Special Offer: Enjoy 20% off on all pasta dishes! 🎉</p>
@@ -70,13 +79,12 @@
                     <input type="search" placeholder="Search...">
                 </div>
             </div>
-
         </section>
 
-        <section >
+        <section>
             <div id="notifications" style="display: block;">
                 <h3>Alert</h3>
-                <div >
+                <div>
                     <table>
                         <thead>
                             <tr>
@@ -84,7 +92,7 @@
                                 <th>Message</th>
                                 <th>Reason</th>
                                 <th>Task</th>
-                                <th>Action</th>  
+                                <th width="5">Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -93,26 +101,30 @@
                                 <td data-label="Message">New order received for table #5. Please prepare the dishes</td>
                                 <td data-label="Reason">Notifying kitchen staff or waiters about incoming orders</td>
                                 <td data-label="Task">Click to view the order details</td>
-                                 <td class="action">
-                                    <img class="img-pencil" src="images/pencil-img.png" alt="Edit">
-                                    <img class="img-trash" src="images/trash-img.png" alt="Delete">
+                                <td>
+                                    <div class="action">
+                                        <button type="button" onclick="fcEdit()"  >
+                                            <img id="img-pencil" class="img-pencil" src="images/pencil-img_bg_removed.png"    alt="Edit">
+                                        </button>
+                                        <button type="button" onclick="fcDel()" >
+                                            <img id="img-trash" class="img-trash" src="images/trash-img_bg_removed.png"   alt="Delete">
+                                        </button>
+                                    </div>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
-                
             </div>
         </section>
-        <section  >
-            <div style="display: flex; justify-content: space-between; align-items: end; width: 100%;">
-                <h3>Wait List</h3>
-                <button id="add-wait-list" type="button"  class="button-add">+Add</button>
-            </div>
-            <table id="wait-list-table" >
+        <section>
+           <div class="header-wrapper">
+                <h3 class="wait-list-title" >Wait List</h3>
+                <button class="add-item-btn" id="add-wait-list"  type="button"  >+Add</button>
+            </div> 
+            <table id="wait-list-table">
                 <thead>
                     <tr>
-                        
                         <th>Customer Name</th>
                         <th>Phone Number</th>
                         <th>Party Size</th>
@@ -120,7 +132,7 @@
                         <th>Estimated Wait time</th>
                         <th>Table Preference</th>
                         <th>Special Notes</th>
-                        <th>Action</th>  
+                        <th width="5">Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -141,10 +153,10 @@
             </table>
         </section>
         <section class="active-tables-and-orders">
-            <div style="display: flex; justify-content: space-between; align-items: end; width: 100%;">
-                <h3>Active Tables and Orders</h3>
-                <button id="add-active-table" type="button"  class="button-add">+Add</button>
-            </div>
+            <div class="header-wrapper">
+                <h3 class="wait-list-title" >Active Tables and Orders</h3>
+                <button class="add-item-btn" id="add-active-table"  type="button"  >+Add</button>
+            </div> 
             <table>
                 <thead>
                     <tr>
@@ -156,7 +168,7 @@
                         <th>Server Name</th>
                         <th>Order Status</th>
                         <th>Notes</th>
-                        <th>Action</th>  
+                        <th width="5">Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -168,10 +180,16 @@
                         <td data-label="Time Seated">05 min</td>
                         <td data-label="Server">Ted</td>
                         <td data-label="Order Status">Order Served</td>
-                        <td data-label="Notes">n/a</td>                    
-                        <td class="action">
-                            <img class="img-pencil" src="images/pencil-img.png" alt="Edit">
-                            <img class="img-trash" src="images/trash-img.png" alt="Delete">
+                        <td data-label="Notes">n/a</td>
+                        <td>
+                            <div class="action">
+                                <button type="button" onclick="fcEdit()" >
+                                    <img id="img-pencil" class="img-pencil" src="images/pencil-img_bg_removed.png" alt="Edit">
+                                </button>
+                                <button type="button" onclick="fcDel()">
+                                    <img id="img-trash" class="img-trash" src="images/trash-img_bg_removed.png" alt="Delete">
+                                </button>
+                            </div>
                         </td>
                     </tr>
                     <tr>
@@ -182,10 +200,16 @@
                         <td data-label="Time Seated">0 min</td>
                         <td data-label="Server">Willian</td>
                         <td data-label="Order Status"></td>
-                        <td data-label="Notes">n/a</td>                    
-                        <td class="action">
-                            <img class="img-pencil" src="images/pencil-img.png" alt="Edit">
-                            <img class="img-trash" src="images/trash-img.png" alt="Delete">
+                        <td data-label="Notes">n/a</td>
+                        <td>
+                            <div class="action">
+                                <button type="button" onclick="fcEdit()" >
+                                    <img id="img-pencil" class="img-pencil" src="images/pencil-img_bg_removed.png" alt="Edit">
+                                </button>
+                                <button type="button" onclick="fcDel()">
+                                    <img id="img-trash" class="img-trash" src="images/trash-img_bg_removed.png" alt="Delete">
+                                </button>
+                            </div>
                         </td>
                     </tr>
                     <tr>
@@ -196,24 +220,32 @@
                         <td data-label="Time Seated">0 min</td>
                         <td data-label="Server">Ted</td>
                         <td data-label="Order Status"></td>
-                        <td data-label="Notes">n/a</td>                    
-                        <td class="action">
-                            <img class="img-pencil" src="images/pencil-img.png" alt="Edit">
-                            <img class="img-trash" src="images/trash-img.png" alt="Delete">
+                        <td data-label="Notes">n/a</td>
+                        <td>
+                            <div class="action">
+                                <button type="button" onclick="fcEdit()">
+                                    <img id="img-pencil" class="img-pencil" src="images/pencil-img_bg_removed.png" alt="Edit">
+                                </button>
+                                <button type="button" onclick="fcDel()" >
+                                    <img id="img-trash" class="img-trash" src="images/trash-img_bg_removed.png" alt="Delete">
+                                </button>
+                            </div>
                         </td>
                     </tr>
                 </tbody>
             </table>
-            <button id="add-active-table" type="button"  class="button-add">+Add</button>
+            <!-- <button id="add-active-table" type="button" class="button-add">+Add</button> -->
         </section>
     </main>
     <footer>
-        <div>&copy; <span class="currentYear" id="currentYear"></span><img class="icone" src="images/canada_flag.jfif" alt="icon of Canada">Gerson Martins de Oliveira <img class="icone" src="images/canada_flag.jfif" alt="icon of Canada">Canada </div>
+        <div>&copy; <span class="currentYear" id="currentYear"></span><img class="icone" src="images/canada_flag.jfif"
+                alt="icon of Canada">Gerson Martins de Oliveira <img class="icone" src="images/canada_flag.jfif"
+                alt="icon of Canada">Canada </div>
         <div class="name" id="lastModified">Page last modified:</div>
     </footer>
     <script src="scripts/eRestaurant.js" defer></script>
     <script src="scripts/eRestaurant-modal.js" defer></script>
-    
+
 </body>
 
 <!-- Modal -->
@@ -258,14 +290,18 @@
 <!-- Modal -->
 <div id="modal-active-table" class="modal">
     <div class="modal-content">
-        <span class="close">&times;</span>
-        <span>This is a Demo application. </span><br>
-        <span>The modal form for Active Table and Orders is not available.</span>
+        <span class="close1">&times;</span>
+
+            <h3 id="modal-title"></h3>
+            <p id="modal-message"></p>
+            <br><br><br>
+            <div id="modal-actions" class="modal-actions" >
+                <button id="modal-confirm" class="modal-confirm" >Yes</button>
+                <button id="modal-cancel" class="modal-cancel" >No</button>
+            </div>
     </div>
 </div>
 
 
 
-
 </html>
-

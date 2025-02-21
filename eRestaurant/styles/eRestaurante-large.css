@@ -7,13 +7,17 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif; /* Set a default font */
-    line-height: 1.6; /* Improve readability */
-    background-color: white; /* Optional: Set a background color */
+    font-family: Arial, sans-serif;
+    /* Set a default font */
+    line-height: 1.6;
+    /* Improve readability */
+    background-color: white;
+    /* Optional: Set a background color */
     color: #444444;
 }
 
-header, footer {
+header,
+footer {
     display: flex;
     align-items: center;
     padding: 5px;
@@ -37,36 +41,26 @@ header p {
     width: 100%;
 }
 
-nav{
+nav {
     justify-content: center;
     align-items: center;
     margin-left: auto;
-    gap: 20px;    
+    gap: 20px;
 }
 
 .menu-container {
-    display: flex; /* Align buttons horizontally */
+    display: flex;
+    /* Align buttons horizontally */
     align-items: center;
     justify-items: center;
     justify-content: center;
-    gap: 55px; /* Space between buttons */
+    gap: 55px;
+    /* Space between buttons */
     width: 100%;
     position: relative;
 }
 
 
-/* Buttons Menu Upload and Help */
-.menu-upload {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    font-size: 1rem;
-    width: 28%;
-    cursor: pointer; 
-    transition: background-color 0.3s, color 0.3s; 
-
-}
 
 
 .icon-list {
@@ -75,55 +69,69 @@ nav{
     align-items: center;
     list-style: none;
     padding: 0;
-    margin:0;
+    margin: 0;
     padding: 15px;
-    
+
 }
 
 .icon-list li {
     position: relative;
-    margin-left: 25px; 
+    margin-left: 25px;
     margin-right: 20px;
     list-style: none;
 
-} 
+}
 
 .icon-list li::after {
-    content: ''; /* Required to create an empty pseudo-element */
+    content: '';
+    /* Required to create an empty pseudo-element */
     position: absolute;
-    bottom: 0; /* Position the line at the bottom of the list item */
-    left: 50%; /* Start the line at the center horizontally */
-    width: 0; /* Initial width is 0 */
-    height: 2px; /* Set the height of the line (adjustable) */
-    background-color: black; /* Line color */
-    transition: width 0.3s ease, left 0.3s ease; /* Transition the width and position */
+    bottom: 0;
+    /* Position the line at the bottom of the list item */
+    left: 50%;
+    /* Start the line at the center horizontally */
+    width: 0;
+    /* Initial width is 0 */
+    height: 2px;
+    /* Set the height of the line (adjustable) */
+    background-color: black;
+    /* Line color */
+    transition: width 0.3s ease, left 0.3s ease;
+    /* Transition the width and position */
 }
 
 /* On hover, grow the line from center to edges */
 .icon-list li:hover::after {
-    width: 100%; /* Expand to 100% of the width */
-    left: 0; /* Position the line to start at the left edge */
+    width: 100%;
+    /* Expand to 100% of the width */
+    left: 0;
+    /* Position the line to start at the left edge */
 }
 
 
 /* Style for the hamburger menu button */
 .hamburger-menu {
-    position: relative; /* To position the options relative to the button */
+    position: relative;
+    /* To position the options relative to the button */
     display: inline-block;
     display: none;
 }
 
 /* Hide the hamburger options by default */
 .hamburger-options {
-    display: none; /* Initially hidden */
-    position: absolute; /* Position options below the hamburger menu */
-    top: 90%; /* Position directly below the menu */
+    display: none;
+    /* Initially hidden */
+    position: absolute;
+    /* Position options below the hamburger menu */
+    top: 90%;
+    /* Position directly below the menu */
     left: -380%;
     background-color: white;
-    border: 1px solid #ccc; 
+    border: 1px solid #ccc;
     padding: 10px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); 
-    width: 500%; /* Make it the same width as the hamburger button */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    width: 500%;
+    /* Make it the same width as the hamburger button */
     height: 15rem;
 }
 
@@ -155,25 +163,38 @@ nav{
     align-items: center;
 }
 
- .button-add {
-    display: inline-flex; 
-    padding: 10px 20px; 
-    font-size: 1rem; 
-    border: 1px solid rgb(229, 226, 226); 
-    margin-top: 5px;
-    border-radius: 5px; 
-    cursor: pointer; 
-    transition: background-color 0.3s, color 0.3s; 
-    width: auto; 
-} 
-
-.button-add:hover, .menu-upload:hover {
+/* Buttons Menu Upload and Help */
+button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    margin: 5px;
+    padding: 5px;
+}
+button:hover{
     background-color: #c8c4c4;
-    color: black; /* Changes text color to white */
+    color: black;
 }
 
+.header-wrapper {
+    display: flex;          
+    justify-content: space-between; 
+    width: 100%;            
+    align-items: center;    
+    height: 40px;
+}
 
+.wait-list-title .add-item-btn {
+    width: 150px;
+}
 
+.add-item-btn {
+    width: 100px;
+}
 
 section {
     margin: 15px;
@@ -188,24 +209,29 @@ section {
 
 table {
     width: 100%;
-    border-collapse: collapse;  /* Ensures borders are collapsed into one */
+    border-collapse: collapse;
+    /* Ensures borders are collapsed into one */
     margin-top: 20px;
 }
 
 /* Zebra striping for rows */
 tbody tr:nth-child(odd) {
-    background-color: #f9f9f9;  /* Light background for odd rows */
+    background-color: #f9f9f9;
+    /* Light background for odd rows */
 }
 
 tbody tr:nth-child(even) {
-    background-color: #fff;  /* White background for even rows */
+    background-color: #fff;
+    /* White background for even rows */
 }
 
 /* Style table cells */
-th, td {
+th,
+td {
     padding: 12px;
     text-align: left;
-    border: 1px solid rgb(229, 226, 226);  /* Light gray border for cells */
+    border: 1px solid rgb(229, 226, 226);
+    /* Light gray border for cells */
 }
 
 /* Header row style */
@@ -216,24 +242,19 @@ th {
 
 /* Hover effect for rows */
 tr:hover {
-    background-color: #5c5a5a;  /* Highlight row on hover */
+    background-color: #5c5a5a;
+    /* Highlight row on hover */
 }
 
 
-/* .td-action {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start; 
-    gap: 5px; 
-    height: 1vh;
-} */
+
 
 .img-pencil,
 .img-trash {
-    width: 27px; /* Set same width for consistency */
-    height: 27px; /* Ensure both images have the same height */
-    margin: 5px 0; /* Adjust margin for spacing */
-    object-fit: contain; /* Ensure images maintain aspect ratio */
+    width: 27px;
+    height: 27px;
+    margin: 5px 0;
+    object-fit: contain;
 }
 
 .img-pencil,
@@ -242,24 +263,29 @@ tr:hover {
 }
 
 .action {
-    display: flex; justify-content: space-evenly; align-items: flex-start; 
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
 }
 
-
-/* 
-.td-action {
-    justify-content: center;
+#success-message {
+    display: block;                 /* Garantir que o elemento seja visível */
+    color: green;
+    padding: 10px;
+    text-align: center;
+    background-color: #e0f7e0;
+    border: 1px solid green;
+    margin-bottom: 20px;
+    opacity: 0;                      /* Começar invisível */
+    max-height: 0;                   /* Iniciar com altura 0 */
+    overflow: hidden;                /* Ocultar conteúdo extra enquanto o elemento está colapsado */
+    transition: max-height 1s ease-in-out, opacity 1s ease-in-out;
 }
 
-.img-pencil {
-    width: 28px;
-    margin: 5px;
+#success-message.show {
+    opacity: 1;                      /* Tornar o elemento visível */
+    max-height: 500px;                /* Definir uma altura máxima (ajustável conforme necessário) */
 }
-.img-trash {
-     width: 22px; 
-} */
-
-
 
 footer {
     display: flex;
@@ -288,13 +314,16 @@ footer p {
 .dynamic-content {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center horizontally */
-    justify-content: center; /* Center vertically */
-    
+    align-items: center;
+    /* Center horizontally */
+    justify-content: center;
+    /* Center vertically */
+
     text-align: center;
 }
 
-.date-time h2, #search h2 {
+.date-time h2,
+#search h2 {
     margin: 0;
     font-size: 1.3rem;
 }
@@ -325,7 +354,8 @@ footer p {
     margin-left: 10px;
     border-radius: 50px;
     background-color: transparent;
-    width: 25rem; /* Adjust width as needed */
+    width: 25rem;
+    /* Adjust width as needed */
 }
 
 /* Icon styling */
@@ -342,8 +372,10 @@ footer p {
 
 
 .announcement-bar {
-    background-color: #ffcc00; /* Yellow background for visibility */
-    color: #000; /* Black text */
+    background-color: #ffcc00;
+    /* Yellow background for visibility */
+    color: #000;
+    /* Black text */
     text-align: center;
     padding: 10px;
     font-size: 1.2rem;
@@ -355,10 +387,12 @@ footer p {
     z-index: 1000;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
+
 .announcement-bar a {
     color: #000;
     text-decoration: none;
 }
+
 .announcement-bar a:hover {
     text-decoration: underline;
 }
@@ -367,7 +401,8 @@ footer p {
 
 /* Modal styles */
 .modal {
-    display: none; /* Hidden by default */
+    display: none;
+    /* Hidden by default */
     position: fixed;
     z-index: 1;
     left: 0;
@@ -387,7 +422,7 @@ footer p {
     border-radius: 8px;
 }
 
-.close {
+.close, .close1 {
     color: #aaa;
     float: right;
     font-size: 28px;
@@ -395,11 +430,28 @@ footer p {
     cursor: pointer;
 }
 
+.close1:hover,
+.close1:focus,
 .close:hover,
 .close:focus {
     color: black;
     text-decoration: none;
 }
+
+.modal-actions {
+    display: flex; 
+    justify-content: center; 
+    width: 100%;
+    border-top: 1px solid #888;
+    margin: 5px;
+}
+
+
+.modal-confirm, .modal-cancel {
+    width: 130px;
+    margin: 18px;
+}
+
 
 .form-group {
     margin-bottom: 15px;
@@ -421,7 +473,8 @@ button {
     border-radius: 4px;
 }
 
-button[type="submit"], button[type="button"] {
+button[type="submit"],
+button[type="button"] {
     /* background-color: #007bff; */
     border: 1px solid #ccc;
     color: black;
@@ -429,14 +482,52 @@ button[type="submit"], button[type="button"] {
     cursor: pointer;
 }
 
- button[type="submit"]:hover {
+button[type="submit"]:hover {
     background-color: #c8c4c4;
     color: black;
-} 
+}
 
 
- 
+.meal-container {
 
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+    /* display: flex;
+    flex-wrap: wrap;
+    gap: 40px; */
+}
+.meal-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    /* transition: transform 0.3s ease-in-out; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ensures the content is spread out */
+    height: 100%; /* Ensures full height of the card */
+    transition: transform 0.3s ease-in-out;
+    
+}
+.meal-card img {
+    width: 100%;
+    border-radius: 8px;
+}
+.meal-card p {
+    font-weight: bold;
+}
 
-
-
+.order-btn {
+    margin-top: auto; /* Pushes the button to the bottom */
+    background-color: #FF5722; /* Button color */
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}

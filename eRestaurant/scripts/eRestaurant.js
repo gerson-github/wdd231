@@ -1,3 +1,4 @@
+
 const currYear = (new Date()).getFullYear();
 const currentDate = new Date();
 const formattedDate = currentDate.toLocaleString();
@@ -13,6 +14,7 @@ const hamburgerOptions = document.getElementById('hamburgerOptions');
 const menuContainer = document.getElementById('menu-container');
 const navMenu = document.getElementById('nav-menu');
 
+
 hamburgerMenu.addEventListener('click', () => {
     if (hamburgerOptions.style.display === 'block') {
         hamburgerOptions.style.display = 'none';
@@ -24,6 +26,10 @@ hamburgerMenu.addEventListener('click', () => {
         navMenu.style.display = 'none';
     }
 });
+
+
+
+
 
 
 
@@ -66,56 +72,69 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-    // Function to populate the table with customer data
-    async function populateTable() {
+// Function to populate the table with customer data
+async function populateTable() {
 
-        const n = await fetch("data/customer.json");
-        const data = await n.json();
-        const customers = data.customer;
-    
-        // Get the table body element where the rows will be inserted
-        const tableBody = document.querySelector('#wait-list-table tbody');
-    
-        // Clear the table before adding new rows
-        tableBody.innerHTML = '';
-    
-        // Loop through the customer data and create table rows
-        customers.forEach(customer => {
-            const row = document.createElement('tr');  // Create a new table row
+    const n = await fetch("data/customer.json");
+    const data = await n.json();
+    const customers = data.customer;
 
-            // Create table cells for each customer property and append them to the row
-            const columns = [
-                { label: 'Customer Name', value: customer.customer_name },
-                { label: 'Phone Number', value: customer.phone_number },
-                { label: 'Party Size', value: customer.party_size },
-                { label: 'Check-In', value: new Date(customer.check_in).toLocaleString() },
-                { label: 'Estimated Wait Time', value: customer.estimated_wait_time },
-                { label: 'Table Preference', value: customer.table_preference },
-                { label: 'Special Notes', value: customer.special_notes }
-            ];
-    
-            columns.forEach(col => {
-                const cell = document.createElement('td');  // Create a new table cell
-                cell.textContent = col.value;  // Set the cell's text content to the customer data value
-                cell.setAttribute('data-label',col.label);
-                row.appendChild(cell);  // Append the cell to the row
-            });
-    
-            // Create and append action column
-            const actionCell = document.createElement('td');
-            actionCell.setAttribute('data-label', 'Action');
-            actionCell.innerHTML = `
-                <div class="action">
-                    <img class="img-pencil" src="images/pencil-img.png" alt="Edit">
-                    <img class="img-trash" src="images/trash-img.png" alt="Delete">
-                </div>
-            `;
-            row.appendChild(actionCell);
+    // Get the table body element where the rows will be inserted
+    const tableBody = document.querySelector('#wait-list-table tbody');
 
-            // Append the row to the table body
-            tableBody.appendChild(row);
+    // Clear the table before adding new rows
+    tableBody.innerHTML = '';
+
+    // Loop through the customer data and create table rows
+    customers.forEach(customer => {
+        const row = document.createElement('tr');  // Create a new table row
+
+        // Create table cells for each customer property and append them to the row
+        const columns = [
+            { label: 'Customer Name', value: customer.customer_name },
+            { label: 'Phone Number', value: customer.phone_number },
+            { label: 'Party Size', value: customer.party_size },
+            { label: 'Check-In', value: new Date(customer.check_in).toLocaleString() },
+            { label: 'Estimated Wait Time', value: customer.estimated_wait_time },
+            { label: 'Table Preference', value: customer.table_preference },
+            { label: 'Special Notes', value: customer.special_notes }
+        ];
+
+        columns.forEach(col => {
+            const cell = document.createElement('td');  // Create a new table cell
+            cell.textContent = col.value;  // Set the cell's text content to the customer data value
+            cell.setAttribute('data-label', col.label);
+            row.appendChild(cell);  // Append the cell to the row
         });
-    }
-    
-    // Call the function to populate the table when the page loads
-    document.addEventListener('DOMContentLoaded', populateTable);
+
+        // Create and append action column
+        const actionCell = document.createElement('td');
+        actionCell.setAttribute('data-label', 'Action');
+        actionCell.innerHTML = `
+           <td>
+                <div class="action">
+                    <button type="button" onclick="fcEdit();" >
+                        <img id="img-pencil" class="img-pencil" src="images/pencil-img_bg_removed.png"  alt="Edit">
+                    </button>
+                    <button type="button" onclick="fcDel();">
+                        <img id="img-trash" class="img-trash" src="images/trash-img_bg_removed.png" alt="Delete">
+                    </button>
+                </div>
+            </td>
+            
+        `;
+        row.appendChild(actionCell);
+
+        // Append the row to the table body
+        tableBody.appendChild(row);
+    });
+}
+
+// Call the function to populate the table when the page loads
+document.addEventListener('DOMContentLoaded', populateTable);
+
+function deleteRow()
+{
+    const row = event.target.closest('tr');
+    row.remove();
+}
