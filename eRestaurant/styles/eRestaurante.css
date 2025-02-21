@@ -1,0 +1,72 @@
+@media (max-width: 1070px) {
+    
+    .menu-container,
+    .nav-menu
+     {
+        display: none;
+    }
+
+    
+    .hamburger-menu {
+        display: block;
+
+    }
+
+    header p {
+        font-size: 22px;
+    }
+
+    
+}
+
+
+ /* Make table more readable on smaller screens */
+ @media (max-width: 768px) {
+    table {
+        font-size: 14px;
+    }
+
+    th, td {
+        padding: 8px;
+    }
+
+    /* Stack table rows for very small screens */
+    thead {
+        display: none;
+    }
+
+    tbody tr {
+        display: block;
+        /* border: 1px solid #ccc; */
+        margin-bottom: 10px;
+        padding: 10px;
+        background: #fff;
+    }
+
+    tbody td {
+        display: flex;
+        justify-content: space-between;
+        padding: 5px;
+    }
+
+    tbody td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        /* text-transform: uppercase; */
+        flex: 1;
+        padding-right: 10px;
+    }
+
+    .img-pencil,
+    .img-trash {
+    width: 24px; 
+    height: 24px;
+    margin: 3px; 
+    }
+
+    .action {
+        justify-content: end; 
+    }
+
+
+ }

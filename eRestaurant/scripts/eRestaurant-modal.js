@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeButton = document.querySelector('.close');
 
     // Open modalWaitList
+    
     addButtonWaitList.addEventListener('click', () => {
         modalWaitList.style.display = 'block';
     });

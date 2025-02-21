@@ -1,0 +1,442 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif; /* Set a default font */
+    line-height: 1.6; /* Improve readability */
+    background-color: white; /* Optional: Set a background color */
+    color: #444444;
+}
+
+header, footer {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    margin: 15px;
+    border: 2px solid gainsboro;
+    border-radius: 7px;
+}
+
+.logo {
+    margin-right: 20px;
+}
+
+.logo img {
+    max-height: 80px;
+}
+
+header p {
+    margin: 0 20px;
+    font-size: 2.2rem;
+    font-weight: bold;
+    width: 100%;
+}
+
+nav{
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    gap: 20px;    
+}
+
+.menu-container {
+    display: flex; /* Align buttons horizontally */
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    gap: 55px; /* Space between buttons */
+    width: 100%;
+    position: relative;
+}
+
+
+/* Buttons Menu Upload and Help */
+.menu-upload {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1rem;
+    width: 28%;
+    cursor: pointer; 
+    transition: background-color 0.3s, color 0.3s; 
+
+}
+
+
+.icon-list {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin:0;
+    padding: 15px;
+    
+}
+
+.icon-list li {
+    position: relative;
+    margin-left: 25px; 
+    margin-right: 20px;
+    list-style: none;
+
+} 
+
+.icon-list li::after {
+    content: ''; /* Required to create an empty pseudo-element */
+    position: absolute;
+    bottom: 0; /* Position the line at the bottom of the list item */
+    left: 50%; /* Start the line at the center horizontally */
+    width: 0; /* Initial width is 0 */
+    height: 2px; /* Set the height of the line (adjustable) */
+    background-color: black; /* Line color */
+    transition: width 0.3s ease, left 0.3s ease; /* Transition the width and position */
+}
+
+/* On hover, grow the line from center to edges */
+.icon-list li:hover::after {
+    width: 100%; /* Expand to 100% of the width */
+    left: 0; /* Position the line to start at the left edge */
+}
+
+
+/* Style for the hamburger menu button */
+.hamburger-menu {
+    position: relative; /* To position the options relative to the button */
+    display: inline-block;
+    display: none;
+}
+
+/* Hide the hamburger options by default */
+.hamburger-options {
+    display: none; /* Initially hidden */
+    position: absolute; /* Position options below the hamburger menu */
+    top: 90%; /* Position directly below the menu */
+    left: -380%;
+    background-color: white;
+    border: 1px solid #ccc; 
+    padding: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); 
+    width: 500%; /* Make it the same width as the hamburger button */
+    height: 15rem;
+}
+
+.hamburger-options ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.hamburger-options ul li {
+    padding: 10px;
+    cursor: pointer;
+}
+
+/* Optional: Hover effect for items */
+.hamburger-options ul li:hover {
+    background-color: #f0f0f0;
+}
+
+/* Show the hamburger options when 'active' class is added */
+.hamburger-options.active {
+    display: block;
+}
+
+
+.date-time {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+}
+
+ .button-add {
+    display: inline-flex; 
+    padding: 10px 20px; 
+    font-size: 1rem; 
+    border: 1px solid rgb(229, 226, 226); 
+    margin-top: 5px;
+    border-radius: 5px; 
+    cursor: pointer; 
+    transition: background-color 0.3s, color 0.3s; 
+    width: auto; 
+} 
+
+.button-add:hover, .menu-upload:hover {
+    background-color: #c8c4c4;
+    color: black; /* Changes text color to white */
+}
+
+
+
+
+section {
+    margin: 15px;
+}
+
+/*Tags related to the Table */
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;  /* Ensures borders are collapsed into one */
+    margin-top: 20px;
+}
+
+/* Zebra striping for rows */
+tbody tr:nth-child(odd) {
+    background-color: #f9f9f9;  /* Light background for odd rows */
+}
+
+tbody tr:nth-child(even) {
+    background-color: #fff;  /* White background for even rows */
+}
+
+/* Style table cells */
+th, td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid rgb(229, 226, 226);  /* Light gray border for cells */
+}
+
+/* Header row style */
+th {
+    background-color: #c8c4c4;
+    font-weight: bold;
+}
+
+/* Hover effect for rows */
+tr:hover {
+    background-color: #5c5a5a;  /* Highlight row on hover */
+}
+
+
+/* .td-action {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; 
+    gap: 5px; 
+    height: 1vh;
+} */
+
+.img-pencil,
+.img-trash {
+    width: 27px; /* Set same width for consistency */
+    height: 27px; /* Ensure both images have the same height */
+    margin: 5px 0; /* Adjust margin for spacing */
+    object-fit: contain; /* Ensure images maintain aspect ratio */
+}
+
+.img-pencil,
+.img-trash:hover {
+    cursor: pointer;
+}
+
+.action {
+    display: flex; justify-content: space-evenly; align-items: flex-start; 
+}
+
+
+/* 
+.td-action {
+    justify-content: center;
+}
+
+.img-pencil {
+    width: 28px;
+    margin: 5px;
+}
+.img-trash {
+     width: 22px; 
+} */
+
+
+
+footer {
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    justify-items: center;
+}
+
+footer p {
+    padding: 0;
+}
+
+.icone {
+    width: 28px;
+    height: 18px;
+    display: inline-block;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    margin-left: 12px;
+    margin-right: 12px;
+
+}
+
+/* General section styling */
+.dynamic-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+    
+    text-align: center;
+}
+
+.date-time h2, #search h2 {
+    margin: 0;
+    font-size: 1.3rem;
+}
+
+#search {
+    margin-top: 20px;
+}
+
+/* Styling the pill */
+.pill {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 16px;
+    background-color: #f1f1f1;
+    border-radius: 50px;
+    border: 1px solid #ccc;
+    width: fit-content;
+    margin-top: 10px;
+}
+
+/* Search input field styling */
+.pill input[type="search"] {
+    border: none;
+    outline: none;
+    padding: 8px;
+    font-size: 1rem;
+    margin-left: 10px;
+    border-radius: 50px;
+    background-color: transparent;
+    width: 25rem; /* Adjust width as needed */
+}
+
+/* Icon styling */
+.pill img {
+    width: 20px;
+    height: auto;
+    margin-right: 8px;
+}
+
+/* Optional: Add some hover effects or transitions */
+.pill:hover {
+    background-color: #e0e0e0;
+}
+
+
+.announcement-bar {
+    background-color: #ffcc00; /* Yellow background for visibility */
+    color: #000; /* Black text */
+    text-align: center;
+    padding: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.announcement-bar a {
+    color: #000;
+    text-decoration: none;
+}
+.announcement-bar a:hover {
+    text-decoration: underline;
+}
+
+
+
+/* Modal styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    border-radius: 8px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input,
+select,
+button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button[type="submit"], button[type="button"] {
+    /* background-color: #007bff; */
+    border: 1px solid #ccc;
+    color: black;
+    border: none;
+    cursor: pointer;
+}
+
+ button[type="submit"]:hover {
+    background-color: #c8c4c4;
+    color: black;
+} 
+
+
+ 
+
+
+
+
