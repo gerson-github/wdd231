@@ -61,6 +61,16 @@
             "email":"info@peakfitnessgym.com"
         },
         {
+            "name": "Victoria Mall",
+            "address": "7070 Main Ave, Victoria, CA",
+            "phone": "(123) 999-0000",
+            "website": "https://www.victoriamall.com",
+            "image": "img_cia.png",
+            "membership_level": 3,
+            "category": "shopping",
+            "email":"info@victoriamall.com"
+        },
+        {
             "name": "Velocity Marketing Agency",
             "address": "147 Branding Blvd, Springfield, USA",
             "phone": "(123) 333-4444",
