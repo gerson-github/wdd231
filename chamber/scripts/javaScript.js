@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                                 <dt>URL:</dt>
                                 <dd><a href="${member.website}" target="_blank">${member.website}</a></dd>
                                 <dt> </dt>
-                                <dd><button>Learn More</button></dd>
+                                <dd><button class="button" >Learn More</button></dd>
                             </dl>
                         </div>
                     </div>
