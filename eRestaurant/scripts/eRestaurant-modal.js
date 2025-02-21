@@ -2,6 +2,8 @@ const modalActiveTable = document.getElementById('modal-active-table');
 const modalTitle = document.getElementById('modal-title');
 const modalMessage = document.getElementById('modal-message');
 const modalActions = document.getElementById('modal-actions');
+const modalOrder = document.getElementById('modal-order');
+const closeButton = document.querySelector('.close');
 
 function fcEdit(){
     modalTitle.innerText = "This is a Demo application.";
@@ -17,6 +19,25 @@ function fcDel() {
     modalActiveTable.style.display = 'block';
 }
 
+function fcOrder() {
+    modalOrder.style.display = 'block';
+}
+
+
+
+    // Close modalWaitList
+    closeButton.addEventListener('click', () => {
+        modalWaitList.style.display = 'none';
+        modalActiveTable.style.display = 'none';
+    });
+
+    // Close modalWaitList when clicking outside content
+    window.addEventListener('click', (event) => {
+        if (event.target === modalWaitList || event.target === modalActiveTable) {
+            modalWaitList.style.display = 'none';
+            modalActiveTable.style.display = 'none';
+        }
+    });
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -35,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalActiveTable = document.getElementById('modal-active-table');
     const modalWaitList = document.getElementById('modal-wait-list');
     const addButtonWaitList = document.getElementById('add-wait-list');
-    const closeButton = document.querySelector('.close');
+    // const closeButton = document.querySelector('.close');
 
     // Open modalWaitList - insert
     addButtonWaitList.addEventListener('click', () => {

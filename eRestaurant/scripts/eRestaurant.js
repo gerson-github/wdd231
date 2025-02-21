@@ -15,6 +15,7 @@ const menuContainer = document.getElementById('menu-container');
 const navMenu = document.getElementById('nav-menu');
 
 
+
 hamburgerMenu.addEventListener('click', () => {
     if (hamburgerOptions.style.display === 'block') {
         hamburgerOptions.style.display = 'none';
@@ -27,11 +28,9 @@ hamburgerMenu.addEventListener('click', () => {
     }
 });
 
-
-
-
-
-
+document.getElementById("customer-menu").addEventListener("click", function() {
+    window.open("menu.html", "_blank");
+});
 
 // Event listener for icons and content changes
 document.addEventListener('DOMContentLoaded', () => {
@@ -138,3 +137,5 @@ function deleteRow()
     const row = event.target.closest('tr');
     row.remove();
 }
+
+
