@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
 document.addEventListener("DOMContentLoaded", function() {
     const lastVisit = localStorage.getItem("lastVisit"),
-          messageElement = document.getElementById("message");
+          messageElement = document.getElementById("message-last-visit");
 
         if (lastVisit) {
             messageElement.textContent = `Welcome back! Your last visit was on ${lastVisit}.`;
