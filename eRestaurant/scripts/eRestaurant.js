@@ -33,8 +33,12 @@ document.getElementById("customer-menu").addEventListener("click", function() {
     window.open("menu.html", "_blank");
 });
 
+
+
 // Event listener for icons and content changes
 document.addEventListener('DOMContentLoaded', () => {
+
+
     const navigationIcons = document.querySelectorAll('.icon-list img');
 
     navigationIcons.forEach(icon => {
@@ -68,6 +72,8 @@ document.addEventListener('DOMContentLoaded', () => {
     function toggleDisplay(element) {
         element.style.display = (element.style.display === 'none') ? 'block' : 'none';
     }
+    
+
 
 });
 
@@ -137,6 +143,19 @@ function deleteRow()
 {
     const row = event.target.closest('tr');
     row.remove();
+}
+
+// document.getElementById("video-show-btn").addEventListener("click", function() {
+//     toggleDisplayVideo("video-show-section"); // Pass the ID as a string
+// });
+
+function toggleDisplayVideo(elementId) {
+    let element = document.getElementById(elementId);
+    if (element.style.display === "none") {
+        element.style.display = "block"; // Show the element
+    } else {
+        element.style.display = "none"; // Hide the element
+    }
 }
 
 

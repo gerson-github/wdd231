@@ -31,6 +31,7 @@
             <img src="images/hamburger-img.png" width="30" alt="Menu" loading="lazy">
             <div class="hamburger-options" id="hamburgerOptions">
                 <ul>
+                    <li>Watch a Video Demonstration</li>
                     <li>Customer Menu</li>
                     <li>Help</li>
                     <li>Search</li>
@@ -40,10 +41,9 @@
             </div>
         </div>
         <div class="menu-container">
-            <button type="button" id="customer-menu" >Customer Menu
-            </button>
-            <button type="button" >Help
-            </button>
+            <button type="button" id="video-show-btn" onclick="toggleDisplayVideo('video-show-section');" style="border:1px solid black" >Watch a Video Demonstration</button>
+            <button type="button" id="customer-menu" >Customer Menu</button>
+            <button type="button" >Help</button>
         </div>
 
         <nav class="nav-menu">
@@ -59,6 +59,16 @@
 
     </header>
     <main>
+
+
+        <section id="video-show-section" class="video-show-section" style="display: none;">
+            <div style="display: flex; justify-content: center; align-items: center; width: 100%; height: 70vh;">
+                <video controls width="600">
+                    <source src="videos/video-show.webm" type="video/webm">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </section>
 
         <section class="dynamic-content">
             <div class="date-time">
