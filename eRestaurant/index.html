@@ -24,11 +24,11 @@
 <body>
     <header>
         <div class="logo">
-            <img id="product-image" src="images/logo-img.png" alt="Placeholder Image">
+            <img id="product-image" src="images/logo-img.png" alt="Placeholder Image" loading="lazy">
         </div>
         <p>eRestaurant Back-Office System</p>
         <div class="hamburger-menu" id="hamburgerMenu">
-            <img src="images/hamburger-img.png" width="30" alt="Menu">
+            <img src="images/hamburger-img.png" width="30" alt="Menu" loading="lazy">
             <div class="hamburger-options" id="hamburgerOptions">
                 <ul>
                     <li>Customer Menu</li>
@@ -41,20 +41,18 @@
         </div>
         <div class="menu-container">
             <button type="button" id="customer-menu" >Customer Menu
-                <!-- <img src="images/upload-img.png" width="30" alt="User Icon">    -->
             </button>
             <button type="button" >Help
-                <!-- <img src="images/help-img.png" width="30" alt="User Icon">   -->
             </button>
         </div>
 
         <nav class="nav-menu">
             <ul class="icon-list">
-                <li><img src="images/speaker-img.png" data-action="speaker" width="30" alt=""></li>
-                <li><img src="images/magnifier-img.png" data-action="search" width="30" alt=""></li>
-                <li><img src="images/bell-img.png" data-action="notifications" width="30" alt=""></li>
-                <li><img src="images/config-img.png" data-action="settings" width="30" alt=""></li>
-                <li><img src="images/user-img.png" data-action="user" width="30" alt=""></li>
+                <li><img src="images/speaker-img.png" data-action="speaker" width="30" alt="" loading="lazy"></li>
+                <li><img src="images/magnifier-img.png" data-action="search" width="30" alt="" loading="lazy"></li>
+                <li><img src="images/bell-img.png" data-action="notifications" width="30" alt="" loading="lazy"></li>
+                <li><img src="images/config-img.png" data-action="settings" width="30" alt="" loading="lazy"></li>
+                <li><img src="images/user-img.png" data-action="user" width="30" alt="" loading="lazy"></li>
             </ul>
         </nav>
 
@@ -66,16 +64,16 @@
             <div class="date-time">
                 <h3>Date/time: </h3> <span class="name" id="current-date"></span>
             </div>
-            <div id="speaker" class="announcement-bar" style="display: none;">
+            <div id="speaker" class="announcement-bar" >
                 <p>🎉 Today's Special Offer: Enjoy 20% off on all pasta dishes! 🎉</p>
                 <p>New Menu Items: Check out our seasonal specials!</p>
                 <p>Holiday Hours: We will be closed on Christmas Day!</p>
                 <p> Loyalty Program Updates: free appetizer!</p>
             </div>
 
-            <div id="search" style="display: none;">
+            <div id="search" class="search-order" >
                 <div class="pill">
-                    <img src="images/magnifier-img.png" width="20" alt="Search Icon">
+                    <img src="images/magnifier-img.png" width="20" alt="Search Icon" loading="lazy">
                     <input type="search" placeholder="Search...">
                 </div>
             </div>
@@ -104,10 +102,10 @@
                                 <td>
                                     <div class="action">
                                         <button type="button" onclick="fcEdit()"  >
-                                            <img id="img-pencil" class="img-pencil" src="images/pencil-img_bg_removed.png"    alt="Edit">
+                                            <img id="img-pencil" class="img-pencil" src="images/pencil-img_bg_removed.png"    alt="Edit" loading="lazy">
                                         </button>
                                         <button type="button" onclick="fcDel()" >
-                                            <img id="img-trash" class="img-trash" src="images/trash-img_bg_removed.png"   alt="Delete">
+                                            <img id="img-trash" class="img-trash" src="images/trash-img_bg_removed.png"   alt="Delete" loading="lazy">
                                         </button>
                                     </div>
                                 </td>
@@ -184,10 +182,10 @@
                         <td>
                             <div class="action">
                                 <button type="button" onclick="fcEdit()" >
-                                    <img id="img-pencil" class="img-pencil" src="images/pencil-img_bg_removed.png" alt="Edit">
+                                    <img id="img-pencil" class="img-pencil" src="images/pencil-img_bg_removed.png" alt="Edit" loading="lazy">
                                 </button>
                                 <button type="button" onclick="fcDel()">
-                                    <img id="img-trash" class="img-trash" src="images/trash-img_bg_removed.png" alt="Delete">
+                                    <img id="img-trash" class="img-trash" src="images/trash-img_bg_removed.png" alt="Delete" loading="lazy">
                                 </button>
                             </div>
                         </td>
@@ -204,10 +202,10 @@
                         <td>
                             <div class="action">
                                 <button type="button" onclick="fcEdit()" >
-                                    <img id="img-pencil" class="img-pencil" src="images/pencil-img_bg_removed.png" alt="Edit">
+                                    <img id="img-pencil" class="img-pencil" src="images/pencil-img_bg_removed.png" alt="Edit" loading="lazy">
                                 </button>
                                 <button type="button" onclick="fcDel()">
-                                    <img id="img-trash" class="img-trash" src="images/trash-img_bg_removed.png" alt="Delete">
+                                    <img id="img-trash" class="img-trash" src="images/trash-img_bg_removed.png" alt="Delete" loading="lazy">
                                 </button>
                             </div>
                         </td>
@@ -224,10 +222,10 @@
                         <td>
                             <div class="action">
                                 <button type="button" onclick="fcEdit()">
-                                    <img id="img-pencil" class="img-pencil" src="images/pencil-img_bg_removed.png" alt="Edit">
+                                    <img id="img-pencil" class="img-pencil" src="images/pencil-img_bg_removed.png" alt="Edit" loading="lazy">
                                 </button>
                                 <button type="button" onclick="fcDel()" >
-                                    <img id="img-trash" class="img-trash" src="images/trash-img_bg_removed.png" alt="Delete">
+                                    <img id="img-trash" class="img-trash" src="images/trash-img_bg_removed.png" alt="Delete" loading="lazy">
                                 </button>
                             </div>
                         </td>
@@ -238,7 +236,7 @@
         </section>
     </main>
     <footer>
-        <div>&copy; <span class="currentYear" id="currentYear"></span><img class="icone" src="images/canada_flag.jfif"
+        <div>&copy; <span class="currentYear2" id="currentYear"></span><img class="icone" src="images/canada_flag.jfif"
                 alt="icon of Canada">Gerson Martins de Oliveira <img class="icone" src="images/canada_flag.jfif"
                 alt="icon of Canada">Canada </div>
         <div class="name" id="lastModified">Page last modified:</div>

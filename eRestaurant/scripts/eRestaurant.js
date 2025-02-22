@@ -8,6 +8,7 @@ const lastModified = document.lastModified;
 document.getElementById("lastModified").textContent += lastModified;
 document.getElementById("currentYear").textContent = currYear;
 
+
 // Toggle hamburger menu
 const hamburgerMenu = document.getElementById('hamburgerMenu');
 const hamburgerOptions = document.getElementById('hamburgerOptions');
@@ -137,5 +138,7 @@ function deleteRow()
     const row = event.target.closest('tr');
     row.remove();
 }
+
+
 
 

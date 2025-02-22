@@ -175,16 +175,17 @@ button {
     margin: 5px;
     padding: 5px;
 }
-button:hover{
+
+button:hover {
     background-color: #c8c4c4;
     color: black;
 }
 
 .header-wrapper {
-    display: flex;          
-    justify-content: space-between; 
-    width: 100%;            
-    align-items: center;    
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
     height: 40px;
 }
 
@@ -269,22 +270,28 @@ tr:hover {
 }
 
 #success-message {
-    display: block;                 /* Garantir que o elemento seja visível */
+    display: block;
+    /* Garantir que o elemento seja visível */
     color: green;
     padding: 10px;
     text-align: center;
     background-color: #e0f7e0;
     border: 1px solid green;
     margin-bottom: 20px;
-    opacity: 0;                      /* Começar invisível */
-    max-height: 0;                   /* Iniciar com altura 0 */
-    overflow: hidden;                /* Ocultar conteúdo extra enquanto o elemento está colapsado */
+    opacity: 0;
+    /* Começar invisível */
+    max-height: 0;
+    /* Iniciar com altura 0 */
+    overflow: hidden;
+    /* Ocultar conteúdo extra enquanto o elemento está colapsado */
     transition: max-height 1s ease-in-out, opacity 1s ease-in-out;
 }
 
 #success-message.show {
-    opacity: 1;                      /* Tornar o elemento visível */
-    max-height: 500px;                /* Definir uma altura máxima (ajustável conforme necessário) */
+    opacity: 1;
+    /* Tornar o elemento visível */
+    max-height: 500px;
+    /* Definir uma altura máxima (ajustável conforme necessário) */
 }
 
 footer {
@@ -370,6 +377,9 @@ footer p {
     background-color: #e0e0e0;
 }
 
+.search-order {
+    display: none;
+}
 
 .announcement-bar {
     background-color: #ffcc00;
@@ -386,6 +396,7 @@ footer p {
     right: 0;
     z-index: 1000;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: none;
 }
 
 .announcement-bar a {
@@ -422,7 +433,8 @@ footer p {
     border-radius: 8px;
 }
 
-.close, .close1 {
+.close,
+.close1 {
     color: #aaa;
     float: right;
     font-size: 28px;
@@ -439,15 +451,16 @@ footer p {
 }
 
 .modal-actions {
-    display: flex; 
-    justify-content: center; 
+    display: flex;
+    justify-content: center;
     width: 100%;
     border-top: 1px solid #888;
     margin: 5px;
 }
 
 
-.modal-confirm, .modal-cancel {
+.modal-confirm,
+.modal-cancel {
     width: 130px;
     margin: 18px;
 }
@@ -487,6 +500,11 @@ button[type="submit"]:hover {
     color: black;
 }
 
+.button-30 {
+    width: 30%;
+}
+
+/* customer menu */
 
 .meal-container {
 
@@ -500,6 +518,7 @@ button[type="submit"]:hover {
     flex-wrap: wrap;
     gap: 40px; */
 }
+
 .meal-card {
     background-color: white;
     border-radius: 10px;
@@ -508,26 +527,117 @@ button[type="submit"]:hover {
     /* transition: transform 0.3s ease-in-out; */
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Ensures the content is spread out */
-    height: 100%; /* Ensures full height of the card */
+    justify-content: space-between;
+    /* Ensures the content is spread out */
+    height: 100%;
+    /* Ensures full height of the card */
     transition: transform 0.3s ease-in-out;
-    
+
 }
+
 .meal-card img {
     width: 100%;
     border-radius: 8px;
 }
+
 .meal-card p {
     font-weight: bold;
 }
 
 .order-btn {
-    margin-top: auto; /* Pushes the button to the bottom */
-    background-color: #FF5722; /* Button color */
+    margin-top: auto;
+    /* Pushes the button to the bottom */
+    background-color: #FF5722;
+    /* Button color */
     color: white;
     padding: 10px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     text-align: center;
+}
+
+
+.custom-container {
+    max-width: 1140px;
+    /* Same as Bootstrap's .container */
+    margin: 50px auto;
+    /* mt-5 (margin-top: 3rem) and centering */
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.custom-text {
+    text-align: center;
+    /* Equivalent to Bootstrap's text-center */
+    margin-bottom: 1.5rem;
+    /* Equivalent to Bootstrap's mb-4 (24px or 1.5rem) */
+}
+
+.custom-row {
+    display: flex;
+    /* Makes it a flex container */
+    flex-wrap: wrap;
+    /* Allows wrapping like Bootstrap's row */
+    margin-right: -0.5rem;
+    /* Adjusts spacing */
+    margin-left: -0.5rem;
+}
+
+.custom-col {
+    flex: 1;
+    /* Makes columns flexible like Bootstrap's .col */
+    padding: 0 0.5rem;
+    /* Adjusts padding between columns */
+}
+
+/* Categories Grid */
+.categories-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Category Card */
+.category-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.category-card:hover {
+    transform: scale(1.05);
+}
+
+.category-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.category-card h3 {
+    margin: 10px 0;
+    font-size: 20px;
+    color: #333;
+}
+
+.category-card p {
+    font-size: 14px;
+    color: #666;
+    text-align: justify;
+    padding: 0 10px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.menu-title {
+    font-size: 4rem;text-align: center; background-color: #c2bfbf;
 }
