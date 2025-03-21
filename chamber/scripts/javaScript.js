@@ -4,45 +4,116 @@ const currYear = (new Date).getFullYear(),
 document.getElementById("lastModified").textContent += lastModified;
 document.getElementById("currentYear").textContent = currYear;
 
+//active menu
 document.addEventListener("DOMContentLoaded", function () {
-    const hamburger = document.querySelector(".hamburger"),
-          navLinks = document.querySelector(".nav-links"),
-          heroImageContainer = document.querySelector(".hero-image-container");
+    const navLinks = document.querySelectorAll("nav ul li");
 
-    hamburger.addEventListener("click", function () {
-        navLinks.classList.toggle("show");
-        const navHeight = navLinks.offsetHeight;
-        if (navLinks.classList.contains("show")) {
-            heroImageContainer.style.marginTop = `${navHeight}px`;
-        } else {
-            heroImageContainer.style.marginTop = "0";
-        }
+    navLinks.forEach(link => 
+    {
+        link.addEventListener("click", function() 
+        {
+            navLinks.forEach(nav => { nav.classList.remove("active")});
+            this.classList.add("active");
+        });
     });
 });
 
-document.addEventListener("DOMContentLoaded", async function () {
-    const businessDirectory = document.querySelector(".business-directory"),
-          toggleViewButton = document.getElementById("toggle-view");
+//hamburger button
+document.addEventListener("DOMContentLoaded", function () {
+    const menuButton = document.querySelector("header button");
+    const nav = document.querySelector("nav");
+
+    menuButton.addEventListener("click", function () {
+        nav.classList.toggle("open"); 
+    });
+});
+
+
+document.addEventListener("DOMContentLoaded", async function () 
+{
+    const businessDirectory = document.querySelector(".business-directory");
+    const listView = document.getElementById("list-view");
+
+    toggleViewButton = document.getElementById("toggle-view");
 
     toggleViewButton.addEventListener("click", () => {
+
         businessDirectory.classList.toggle("list-view");
-        toggleViewButton.textContent = businessDirectory.classList.contains("list-view")
-            ? "Switch to Grid View" 
-            : "Switch to List View";
+
+        businessDirectory.innerHTML = "";
+        listView.innerHTML = "";
+
+        if (businessDirectory.classList.contains("list-view")) {
+            toggleViewButton.textContent = "Switch to Card View";
+            loadBusinessDataList();
+            
+        } else {
+            toggleViewButton.textContent = "Switch to List View";    
+            loadBusinessData();
+        }
     });
 
-    async function loadBusinessData() {
+    async function loadBusinessDataList()
+    {
         try {
             const response = await fetch("data/members.json"),
-                  data = await response.json(),
-                  members = data.members;
+            data = await response.json(),
+            members = data.members;
+
+            const businessTable = document.createElement("table");
+            
+            businessTable.innerHTML = `
+                        <table >
+                            <thead>
+                                <tr>
+                                    <th>Company Name</th>
+                                    <th>Type</th>
+                                    <th>Email</th>
+                                    <th>Phone</th>
+                                    <th>Address</th>
+                                    <th>Website</th>
+                                </tr>
+                            </thead>
+                            <tbody>`;
+            
+            const tbody = businessTable.querySelector("tbody");
+
+            members.forEach(member => 
+            {
+                const row = document.createElement("tr");
+                row.innerHTML = `
+                    <td data-label="Company Name">${member.name}</td>
+                    <td data-label="Type">${member.category}</td>
+                    <td data-label="Email"><a href="mailto:${member.email || "#"}">${member.email || "N/A"}</a></td>
+                    <td data-label="Phone">${member.phone}</td>
+                    <td data-label="Address">${member.address}</td>
+                    <td data-label="Website"><a href="${member.website}" target="_blank">Visit</a></td>
+                `;
+                tbody.appendChild(row);
+            });
+
+            listView.appendChild(businessTable);
+ 
+
+        } catch (error)
+        {
+            console.error("Error loading table:", error)
+        }
+    }
+
+    async function loadBusinessData() {
+
+        try {
+            const response = await fetch("data/members.json"),
+            data = await response.json(),
+            members = data.members;
 
             businessDirectory.innerHTML = "";
-
+            
             members.forEach(member => {
                 const businessCard = document.createElement("div");
-                businessCard.classList.add("business-card");
-                businessCard.innerHTML = `
+                    businessCard.classList.add("business-card");
+                    businessCard.innerHTML = `
                     <h3>${member.name}</h3>
                     <p style="border-bottom: 1px solid gray; font-size: 12px; margin: 0; padding: 0;">
                         ${member.category}
@@ -64,34 +135,68 @@ document.addEventListener("DOMContentLoaded", async function () {
                             </dl>
                         </div>
                     </div>
-                `;
-                businessDirectory.appendChild(businessCard);
-            });
+                    `;
+                    businessDirectory.appendChild(businessCard);
+                });
+            
         } catch (error) {
-            console.error("Error loading business data:", error);
+            console.error("Error loading data:", error);
         }
     }
 
-    loadBusinessData();
+    
+     loadBusinessData();
+
+    
 });
 
+// async function fcLastVisit() {
+//     const lastVisit = localStorage.getItem("lastVisit");
+//     const messageElement = document.getElementById("message-last-visit");
 
-function fcLastVisit() {
-    const lastVisit = localStorage.getItem("lastVisit"),
-    messageElement = document.getElementById("message-last-visit");
+//     if (lastVisit) {
+//         messageElement.textContent = `Welcome back! Your last visit was on ${lastVisit}.`;
+//     } else {
+//         messageElement.textContent = "Welcome! This is your first visit.";
+//     }
 
-    if (lastVisit) {
-    messageElement.textContent = `Welcome back! Your last visit was on ${lastVisit}.`;
-    } else {
-    messageElement.textContent = "Welcome! This is your first visit.";
-    }
+//     // Simulate an async operation for illustration (e.g., fetching data, waiting for a response)
+//     const currentDate = (new Date()).toLocaleString();
+//     await new Promise(resolve => setTimeout(resolve, 1000));  // Simulate delay (optional)
 
-    const currentDate = (new Date).toLocaleString();
-    localStorage.setItem("lastVisit", currentDate);
-}
+//     localStorage.setItem("lastVisit", currentDate);
+// }
+
+// // Function to wait for 10 seconds and then call the fcLastVisit function
+// function callAfterDelay() {
+//     setTimeout(async () => {
+//         await fcLastVisit();  // Call the async function after 10 seconds
+//     }, 10000);  // 10 seconds delay (10000 milliseconds)
+// }
+
+// // Ensure the DOM is fully loaded before executing the function
+// document.addEventListener('DOMContentLoaded', () => {
+//     callAfterDelay();  // Start the timer to call the function after 10 seconds
+// });
 
 
-document.addEventListener('DOMContentLoaded', fcLastVisit);
+
+// function fcLastVisit() {
+//     const lastVisit = localStorage.getItem("lastVisit"),
+//     messageElement = document.getElementById("message-last-visit");
+
+//     if (lastVisit) {
+//     messageElement.textContent = `Welcome back! Your last visit was on ${lastVisit}.`;
+//     } else {
+//     messageElement.textContent = "Welcome! This is your first visit.";
+//     }
+
+//     const currentDate = (new Date()).toLocaleString();
+//     localStorage.setItem("lastVisit", currentDate);
+// }
+
+
+// document.addEventListener('DOMContentLoaded', fcLastVisit());
 
 
 
