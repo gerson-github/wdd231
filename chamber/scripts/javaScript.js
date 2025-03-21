@@ -119,7 +119,7 @@ document.addEventListener("DOMContentLoaded", async function ()
                         ${member.category}
                     </p>
                     <div class="business-card-detail">
-                        <img src="images/${member.image}" alt="${member.name}" width="80">
+                        <img src="images/${member.image}" alt="${member.name}" width="80" loading="lazy">
                         <div>
                             <dl class="card-content">
                                 <dt>EMAIL:</dt>
