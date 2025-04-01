@@ -30,7 +30,7 @@
             </div>
             <nav>
                 <ul>
-                    <li class="active">
+                    <li class="">
                         <a href="index.html">Home</a>
                     </li>
                     <li class="">
@@ -39,7 +39,7 @@
                     <li class="">
                         <a href="join-w3.html">Join</a>
                     </li>
-                    <li class="">
+                    <li class="active">
                         <a href="discovery-w3.html">Discover</a>
                     </li>
                     <li>
@@ -49,99 +49,58 @@
             </nav>
             <button>☰</button>
         </header>
-        <main>
+        <main id="main-dicorevery">
             <h1 hidden>WDD231.002 - Web Frontend Development I</h1>
-            <div class="hero-image-container span-tree-columns">
-                <img src="images/bc_chamber.webp" alt="Victoria Chamber of Commerce Logo" class="hero-image" loading="lazy">
-                <button type="button" class="hero-button">Be Part of Our Community</button>
-            </div>
-            <div class="span-tree-columns ml page-label">Home</div>
-            <section class="card ml mr">
-                <h2>Events</h2>
-                <ol>
-                    <li><strong>Budget 2025 - A Conversation with BC's Finance Minister</strong>
-                        <pre>
-    Wednesday, March 5, 2025 8:00 AM - 9:30 AM PST
-    Hotel Grand Pacific - Vancouver Island Ballroom
-    463 Belleville St
-    Victoria, BC V8V 1X3
-                        </pre>
+        
 
-                    </li>
-                    <li>
-                        <strong>Emerge Mentorship Meet & Greet</strong>
-                        <pre>
-    Tuesday, March 11, 2025 9:00 AM - 10:30 AM PST
-    Greater Victoria Chamber of Commerce
-    201C - 633 Courtney St
-    Victoria, BC V8W 1B9
-                        </pre>                    
-                    </li>
-                    <li><strong>March Business Mixer @ Chinook Business Advisory</strong>
-                        <pre>
-    Thursday, March 20, 2025 5:00 PM - 7:00 PM PST
-    Chinook Business Advisory Ltd.
-    2nd Floor - 1824 Store St
-    Victoria, BC V8T 4R4
-                        </pre>   
 
-                    </li>
-                </ol>
+            <!-- Image Gallery Section -->
+            <section >
+                <h2>Attractions in Victoria</h2>
+                <div class="galery">
+                    <figure>
+                        <img src="/chamber/images/museum-natural-history.webp" alt="Museum Natural History" loading="lazy" />
+                        <figcaption><a href="#">Museum Natural History</a></figcaption>
+                    </figure>
+                    <figure>
+                        <img src="/chamber/images/Alpacas_Farm.webp" alt="Alpacas Farm" loading="lazy" />
+                        <figcaption><a href="#">Alpacas Farm</a></figcaption>
+                    </figure>
+                    <figure>
+                        <img src="/chamber/images/Humpback-whale-seen-with-Eagle-Wing-Tours.webp" alt="Humpback Whale" loading="lazy" />
+                        <figcaption><a href="#">Humpback Whale</a></figcaption>
+                    </figure>
+                    <figure>
+                        <img src="/chamber/images/imax-victoria.webp" alt="IMAX Victoria" loading="lazy" />
+                        <figcaption><a href="#">IMAX Vic</a></figcaption>
+                    </figure>
+                    <figure>
+                        <img src="/chamber/images/Whale-Watching-Pod-of-orcas-at-Sunset.webp" alt="Whale Watching" loading="lazy" />
+                        <figcaption><a href="#">Whale Watching</a></figcaption>
+                    </figure>
+                    <figure>
+                        <img src="/chamber/images/butchart-gardens.webp" alt="Butchart Gardens" loading="lazy" />
+                        <figcaption><a href="#">Butchart Gardens</a></figcaption>
+                    </figure>
+                </div>
+                
             </section>
-            <section class="card ml mr">
-                <h2>Current Weather</h2>
-                <div class="current-weather">
-                    <img class="weather-icon" src="images/weather.png" alt="Weather Icon" loading="lazy">
-                    <div>
-                        <p class="weather-temp">--°C</p> 
-                        <p class="weather-condition">Loading...</p> 
-                        <dl class="weather-info">
-                            <dt>High:</dt>
-                            <dd class="weather-high">--°C</dd> 
-                            <dt>Low:</dt>
-                            <dd class="weather-low">--°C</dd> 
-                            <dt>Humidity:</dt>
-                            <dd class="weather-humidity">--%</dd>  
-                            <dt>Sunrise:</dt>
-                            <dd class="weather-sunrise">--:--</dd> 
-                            <dt>Sunset:</dt>
-                            <dd class="weather-sunset">--:--</dd>  
-                        </dl>
+        
+            <!-- Places Section (currently empty) -->
+            <section>
+                <h2>Victoria Economic Indicators</h2>
+                <div id="places">
+                    <iframe 
+                        src="https://bcstats.shinyapps.io/Economic-Indicators/"
+                        frameborder="5"
+                        
+                        loading="lazy"
+                        >
+                    </iframe>
                     </div>
-                </div>
-            </section>
-            <section class="card ml mr">
-                <h2>Weather Forecast</h2>
-                <div class="forecast weather-info weather-forecast">
-                    <div class="forecast-day-1"></div>
-                    <div class="forecast-temp-1"></div>
-                
-                    <div class="forecast-day-2"></div>
-                    <div class="forecast-temp-2"></div>
-                
-                    <div class="forecast-day-3"></div>
-                    <div class="forecast-temp-3"></div>
-
-                    <div class="forecast-day-4"></div>
-                    <div class="forecast-temp-4"></div>
-
-                    <div class="forecast-day-5"></div>
-                    <div class="forecast-temp-5"></div>
-
-                    <div class="forecast-day-6"></div>
-                    <div class="forecast-temp-6"></div>
-
-                    <div class="forecast-day-7"></div>
-                    <div class="forecast-temp-7"></div>
-                </div>
-            </section>
-            <!-- <span hidden id="toggle-view" class=" toggle-view" style="display: none;"  ></span> Switch to List View</span>   -->
-             <h2 class="span-tree-columns ml mr  " style="text-align: center;">Weekly Spotlights on Community Businesses</h2>
-            <section class="span-tree-columns ml mr ">
-                <div class="business-directory" ></div>
-                
             </section>
         </main>
+        
         <footer>
             <address>
                 <strong>Victoria Chamber of Commerce</strong>
@@ -205,6 +164,7 @@
             // ]]>
         </script>
     </body>
-    
+    <!-- <script src="scripts/javaScript-w3.js" defer></script> -->
 </html>
+
 
