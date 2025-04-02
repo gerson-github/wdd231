@@ -124,7 +124,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     : ((toggleViewButton.textContent = "Switch to List View"), d());
         }),
         d();
-}),
+});
+
     document.addEventListener("DOMContentLoaded", async () => {
         const t = "9085b3b21530cca83ec19fa4f9cfd2ed",
             e = "Victoria",
