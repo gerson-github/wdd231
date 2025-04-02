@@ -22,30 +22,78 @@ document.addEventListener("DOMContentLoaded", () => {
         o = document.getElementById("list-view");
     async function d() {
         try {
-            const t = await fetch("data/members.json");
-            let e = (await t.json()).members;
-            isIndexPage && (e = getRandomMembers(e, 3)),
-                o && (o.innerHTML = ""),
-                a && (a.innerHTML = ""),
-                e.forEach((t) => {
-                    const e = document.createElement("div");
-                    e.classList.add("business-card"),
-                        (e.innerHTML = `\n                    <h3>${t.name}</h3>\n                    <p style="border-bottom: 1px solid gray; font-size: 12px; margin: 0; padding: 0;">\n                        ${
-                            t.category
-                        }\n                    </p>\n                    <div class="business-card-detail">\n                        <img src="images/${t.image}" alt="${
-                            t.name
-                        }" width="80" loading="lazy">\n                        <div>\n                            <dl class="card-content">\n                                <dt>EMAIL:</dt>\n                                <dd><a href="mailto:${
-                            t.email || "#"
-                        }">${t.email || "N/A"}</a></dd>\n                                <dt>PHONE:</dt>\n                                <dd>${
-                            t.phone
-                        }</dd>\n                                <dt>ADDRESS:</dt>\n                                <dd>${t.address}</dd>\n                                <dt>URL:</dt>\n                                <dd><a href="${
-                            t.website
-                        }" target="_blank">${
-                            t.website
-                        }</a></dd>\n                                <dt></dt>\n                                <dd><button class="button">Learn More</button></dd>\n                            </dl>\n                        </div>\n                    </div>\n                `),
-                        a.appendChild(e);
-                });
-        } catch (t) {}
+            const response = await fetch("data/members.json");
+            let members = (await response.json()).members;
+        
+            // Check if we're on the index page and select random members
+            if (isIndexPage) {
+                members = getRandomMembers(members, 3);
+            }
+        
+            // Clear the containers if they exist
+            if (o) o.innerHTML = "";
+            if (a) a.innerHTML = "";
+        
+            // Populate the business directory
+            members.forEach((member) => {
+                const card = document.createElement("div");
+                card.classList.add("business-card");
+        
+                card.innerHTML = `
+                    <h3>${member.name}</h3>
+                    <p style="border-bottom: 1px solid gray; font-size: 12px; margin: 0; padding: 0;">
+                        ${member.category}
+                    </p>
+                    <div class="business-card-detail">
+                        <img src="images/${member.image}" alt="${member.name}" width="80" loading="lazy">
+                        <div>
+                            <dl class="card-content">
+                                <dt>EMAIL:</dt>
+                                <dd><a href="mailto:${member.email || "#"}">${member.email || "N/A"}</a></dd>
+                                <dt>PHONE:</dt>
+                                <dd>${member.phone}</dd>
+                                <dt>ADDRESS:</dt>
+                                <dd>${member.address}</dd>
+                                <dt>URL:</dt>
+                                <dd><a href="${member.website}" target="_blank">${member.website}</a></dd>
+                                <dt></dt>
+                                <dd><button class="button">Learn More</button></dd>
+                            </dl>
+                        </div>
+                    </div>
+                `;
+        
+                a.appendChild(card);
+            });
+        } catch (error) {
+            console.error("Error fetching members data:", error);
+        }
+        
+        // try {
+        //     const t = await fetch("data/members.json");
+        //     let e = (await t.json()).members;
+        //     isIndexPage && (e = getRandomMembers(e, 3)),
+        //         o && (o.innerHTML = ""),
+        //         a && (a.innerHTML = ""),
+        //         e.forEach((t) => {
+        //             const e = document.createElement("div");
+        //             e.classList.add("business-card"),
+        //                 (e.innerHTML = `\n<h3>${t.name}</h3>\n<p style="border-bottom: 1px solid gray; font-size: 12px; margin: 0; padding: 0;">\n                        ${
+        //                     t.category
+        //                 }\n                    </p>\n                    <div class="business-card-detail">\n                        <img src="images/${t.image}" alt="${
+        //                     t.name
+        //                 }" width="80" loading="lazy">\n                        <div>\n                            <dl class="card-content">\n                                <dt>EMAIL:</dt>\n                                <dd><a href="mailto:${
+        //                     t.email || "#"
+        //                 }">${t.email || "N/A"}</a></dd>\n                                <dt>PHONE:</dt>\n                                <dd>${
+        //                     t.phone
+        //                 }</dd>\n                                <dt>ADDRESS:</dt>\n                                <dd>${t.address}</dd>\n                                <dt>URL:</dt>\n                                <dd><a href="${
+        //                     t.website
+        //                 }" target="_blank">${
+        //                     t.website
+        //                 }</a></dd>\n                                <dt></dt>\n                                <dd><button class="button">Learn More</button></dd>\n                            </dl>\n                        </div>\n                    </div>\n                `),
+        //                 a.appendChild(e);
+        //         });
+        // } catch (t) {console.error("Error fetching members data:", t);}
     }
     toggleViewButton &&
         toggleViewButton.addEventListener("click", () => {
