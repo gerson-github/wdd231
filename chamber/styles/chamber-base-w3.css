@@ -642,7 +642,7 @@ figure a {
     opacity: 0;
     transition: opacity 1s ease-in-out;
     z-index: 9999;
-    pointer-events: none;
+   
   }
 
   .message-box.show {
